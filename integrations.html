@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Review HTTP/OpenAPI, bounded local/remote MCP semantics, and documented AI-agent harness patterns without a qualified-integration claim.">
+  <meta name="theme-color" content="#030609">
+  <title>Agent Integrations | Signet7</title>
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+  <header class="site-header"><nav class="nav container" aria-label="Primary"><a class="brand" href="index.html"><img src="assets/apple-touch-icon.png" alt=""><span>SIGNET<strong>7</strong></span></a><div class="nav-links"><a href="product.html">Product</a><a href="trust.html">Trust</a><a href="integrations.html" aria-current="page">Integrations</a><a href="about.html">Team</a><a href="docs.html">Docs</a><a class="nav-cta" href="docs.html">Candidate status</a></div></nav></header>
+  <main>
+    <section class="page-hero"><div class="container"><div class="eyebrow">HTTP/OpenAPI · local/remote MCP · harness patterns</div><div class="badge-row"><span class="badge cyan">Explicit tenant boundary</span><span class="badge gold">Caller-enforced verdict</span><span class="badge">Qualification pending</span></div><h1>One decision contract across <span class="gradient-text">documented agent workflows.</span></h1><p class="hero-copy">Connect a caller through HTTP/OpenAPI or the bounded MCP decision tool, receive an exact-action policy verdict, and preserve the bounded payload in the same signed tenant ledger.</p><div class="actions"><a class="button primary" href="docs.html">Read documented patterns</a><a class="button secondary" href="docs.html">Review OpenAPI source</a></div></div></section>
+
+    <section class="page-band"><div class="container integration-grid"><div class="integration-chip"><b>Hermes</b><span>Harness pattern</span></div><div class="integration-chip"><b>OpenClaw</b><span>Harness pattern</span></div><div class="integration-chip"><b>LangGraph</b><span>Harness pattern</span></div><div class="integration-chip"><b>CrewAI</b><span>Harness pattern</span></div><div class="integration-chip"><b>AutoGen</b><span>Harness pattern</span></div></div></section>
+
+    <section class="section"><div class="container split"><div><div class="eyebrow">Remote service pattern</div><h2>Configured process and credential scope.</h2><p class="section-intro">In production remote mode, the MCP process binds tenant scope through trusted configuration and uses a configured bearer token for the remote HTTP service. The caller cannot supply a tenant tool argument. No MCP export tool exists; export and verification use separate HTTP/OpenAPI or CLI surfaces.</p><div class="scope-list"><div class="scope-row"><b>Origin</b><span>Explicit base URL; redirect and cross-origin behavior remains contained.</span></div><div class="scope-row"><b>Tenant</b><span>Process-configured tenant; mismatched requested scope is rejected where applicable.</span></div><div class="scope-row"><b>Result</b><span>Structured `ok`, decision-evidence or error outcome; protocol errors remain distinct.</span></div><div class="scope-row"><b>Caller</b><span>Must stop or continue the framework action based on the result.</span></div></div></div><div class="code-panel"><div class="code-head">Conceptual harness flow · not vendor-specific code</div><pre tabindex="0" aria-label="Conceptual framework harness flow">decision = signet7.record_decision(input)
+
+if not decision.result.allowed:
+    stop_before_external_action(decision.result.policy_verdict)
+else:
+    continue_with_authorized_path()
+
+archive(decision.result.record_id)</pre></div></div></section>
+
+    <section class="section section-line"><div class="container"><div class="eyebrow">Documented patterns</div><h2>Framework-specific hooks, shared candidate semantics.</h2><div class="grid-3"><article class="card hot"><div class="icon">01</div><h3>Hermes</h3><p>Documented pattern for consuming the MCP decision tool through local or configured remote mode.</p></article><article class="card hot"><div class="icon">02</div><h3>OpenClaw</h3><p>Documented pre-action tool/hook pattern using the bounded decision result.</p></article><article class="card"><div class="icon">03</div><h3>LangGraph</h3><p>Documented conditional-edge pattern routing a block result away from an external-action node.</p></article><article class="card"><div class="icon">04</div><h3>CrewAI</h3><p>Documented task-guard pattern that treats tool/protocol errors as failures.</p></article><article class="card"><div class="icon">05</div><h3>AutoGen</h3><p>Documented reply/tool-hook pattern that records a request before a selected execution step.</p></article><article class="card gold"><div class="icon">!</div><h3>Shared limit</h3><p>Patterns are not qualified integrations and imply no certification, partnership, invisible capture or universal action control.</p></article></div></div></section>
+
+    <section class="section"><div class="container"><div class="eyebrow">Qualification contract</div><h2>Prove the negative path before claiming support.</h2><table class="data-table"><thead><tr><th>Check</th><th>Required evidence</th><th>Failure behavior</th></tr></thead><tbody><tr><td><strong>Tenant binding</strong></td><td>Configured scope and returned tenant match</td><td>Reject mismatch; do not retry under caller input</td></tr><tr><td><strong>Auth</strong></td><td>Production token configured and redacted from logs</td><td>Fail closed before remote service call</td></tr><tr><td><strong>Policy</strong></td><td>ALLOW and BLOCK results both exercised</td><td>BLOCK prevents selected action in caller</td></tr><tr><td><strong>Protocol</strong></td><td>Structured success and error outcomes remain distinct</td><td>No false success or ambiguous text parsing</td></tr><tr><td><strong>Record</strong></td><td>Returned record ID can be found/exported through a separate supported surface and verified</td><td>Treat missing record as failed qualification</td></tr></tbody></table><div class="notice gold"><strong>Current release boundary.</strong> These patterns are documented and have authored candidate tests where named. They are not yet qualified against every listed framework or proven in a live customer deployment.</div></div></section>
+  </main>
+  <footer class="footer"><div class="container footer-grid"><div><a class="brand" href="index.html"><img src="assets/apple-touch-icon.png" alt=""><span>SIGNET<strong>7</strong></span></a><div class="legal-note">Framework names describe documented integration patterns only. No certification, endorsement, partnership or deployment is implied.</div></div><div class="footer-links"><a href="product.html">Product</a><a href="trust.html">Trust</a><a href="docs.html">Docs</a>Harness guide</div></div></footer>
+</body>
+</html>

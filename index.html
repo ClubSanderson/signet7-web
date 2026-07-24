@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Signet7 0.2.0rc1 accepts explicit AI-agent decision requests and creates bounded, signed, tenant-scoped records for detached verification.">
+  <meta name="theme-color" content="#030609">
+  <title>Signet7 | Verifiable records for AI decisions</title>
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Primary">
+      <a class="brand" href="index.html"><img src="assets/apple-touch-icon.png" alt=""><span>SIGNET<strong>7</strong></span></a>
+      <div class="nav-links">
+        <a href="product.html">Product</a>
+        <a href="trust.html">Trust</a>
+        <a href="integrations.html">Integrations</a>
+        <a href="about.html">Team</a>
+        <a href="docs.html">Docs</a>
+        <a class="nav-cta" href="docs.html">Candidate status</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Explicit intake · bounded record · external verification</div>
+          <div class="badge-row">
+            <span class="badge cyan">Production candidate · 0.2.0rc1</span>
+            <span class="badge gold">No production claim</span>
+            <span class="badge">Pre-formation project</span>
+          </div>
+          <h1>Verifiable records for decisions <span class="gradient-text">AI systems submit.</span></h1>
+          <p class="hero-copy">Signet7 accepts explicit decision requests, applies its current exact-action policy, and seals protected identifiers, action, provenance state, policy verdict, and a request fingerprint into signed, tenant-scoped records.</p>
+          <div class="actions">
+            <a class="button primary" href="docs.html">Inspect verified status</a>
+            <a class="button secondary" href="trust.html">Review the trust model</a>
+          </div>
+        </div>
+        <aside class="evidence-card" aria-label="Illustrative verification packet">
+          <div class="terminal-head"><span>verification packet</span><span class="dots"><i></i><i></i><i></i></span></div>
+          <div class="signal"><code>01</code><div><b>Tenant scope</b><span>Normalized and bound to the selected ledger.</span></div></div>
+          <div class="signal"><code>02</code><div><b>Decision record</b><span>Canonical payload, nonce, previous hash and signature.</span></div></div>
+          <div class="signal"><code>03</code><div><b>Policy evaluation</b><span>Current exact-action rules produce an explicit verdict status.</span></div></div>
+          <div class="signal"><code>04</code><div><b class="ok">Verification</b><span>Integrity, signer, tenant and latest-head checks use supplied inputs.</span></div></div>
+          <div class="signal"><code>05</code><div><b>Optional anchor</b><span>Head evidence may be stored through S3 Object Lock.</span></div></div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="page-band" aria-label="Current evidence boundary">
+      <div class="container proof-rail">
+        <div class="proof-item"><b>Intake</b><span>Caller supplies five required request strings through an explicit interface.</span></div>
+        <div class="proof-item"><b>Policy</b><span>Current exact-action rules return an allow/block verdict status.</span></div>
+        <div class="proof-item"><b>Record</b><span>Protected identifiers, fingerprint, action and verdict enter the signed chain.</span></div>
+        <div class="proof-item"><b>Verify</b><span>Signer trust, tenant binding and latest-head checks stay externally controlled.</span></div>
+      </div>
+    </section>
+
+    <section id="capabilities" class="section section-line">
+      <div class="container">
+        <div class="eyebrow">Implemented surface</div>
+        <h2>A real cryptographic core.<br>Precisely bounded.</h2>
+        <p class="section-intro">Current draft claims follow source code and authored tests—not a roadmap, Terraform template, release tag, or sales sentence.</p>
+        <div class="grid-3">
+          <article class="card hot"><div class="icon">01</div><h3>Signed evidence ledger</h3><p>Ed25519 signatures, canonical serialization, nonces, previous-hash chaining, export, and standalone verification against an external trust root.</p></article>
+          <article class="card hot"><div class="icon">02</div><h3>Tenant boundaries</h3><p>Tenant normalization, tenant-specific ledgers and trust registries, scoped API keys, role checks, and authored cross-tenant isolation tests.</p></article>
+          <article class="card hot"><div class="icon">03</div><h3>Storage and signing adapters</h3><p>JSONL and SQLite persistence plus DynamoDB adapter code; local signing plus per-tenant AWS KMS adapter code; optional S3 Object Lock anchoring.</p></article>
+          <article class="card"><div class="icon">04</div><h3>Policy decisions</h3><p>A narrow rule engine returns explicit allow or blocked verdicts with provenance warnings where applicable. It is not a general policy-authoring platform.</p></article>
+          <article class="card"><div class="icon">05</div><h3>VSN product profile 1.0</h3><p>The v2 bound-payload method signs sender, message identifier, and body. Optional DNS discovery reads <code>_vsn-auth.&lt;domain&gt;</code> when a resolver is configured. Legacy body-only verification is disabled by default.</p></article>
+          <article class="card"><div class="icon">06</div><h3>Interfaces</h3><p>Flask/Waitress HTTP API, OpenAPI description, CLI, export/verifier utilities, metrics, and a limited stdio MCP tool.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section tight">
+      <div class="container">
+        <div class="eyebrow">Evidence path</div>
+        <h2>Trust is a chain of explicit steps.</h2>
+        <div class="flow">
+          <div class="flow-step"><b>Caller</b><span>Provides tenant context, authentication, input, and requested decision.</span></div>
+          <div class="flow-step"><b>Policy</b><span>Evaluates current exact-action rules and emits a verdict status.</span></div>
+          <div class="flow-step"><b>Ledger</b><span>Canonicalizes and signs the bounded persisted record.</span></div>
+          <div class="flow-step"><b>Storage</b><span>Persists through the selected local or cloud backend.</span></div>
+          <div class="flow-step"><b>Verifier</b><span>Recomputes chain and signature validity against trusted keys.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-line">
+      <div class="container">
+        <div class="eyebrow">Agent integration</div>
+        <h2>One bounded contract.<br>Multiple documented harnesses.</h2>
+        <p class="section-intro">HTTP/OpenAPI and the MCP decision tool expose bounded paths; framework materials are documented patterns, not qualified integrations. The caller still enforces the returned result.</p>
+        <div class="integration-grid">
+          <div class="integration-chip"><b>Hermes</b><span>Remote MCP</span></div>
+          <div class="integration-chip"><b>OpenClaw</b><span>Tool / hook</span></div>
+          <div class="integration-chip"><b>LangGraph</b><span>Conditional edge</span></div>
+          <div class="integration-chip"><b>CrewAI</b><span>Task guard</span></div>
+          <div class="integration-chip"><b>AutoGen</b><span>Reply hook</span></div>
+        </div>
+        <div class="notice gold" style="margin-top:24px"><strong>Compatibility, not endorsement.</strong> These are documented integration patterns—not vendor certification, partnership, deployment, or universal action interception.</div>
+        <div class="actions"><a class="button secondary" href="integrations.html">Review integration boundaries</a><a class="button secondary" href="integrations.html">Open harness guide</a></div>
+      </div>
+    </section>
+
+    <section id="limits" class="section section-line">
+      <div class="container">
+        <div class="eyebrow">Claim boundary</div>
+        <h2>What the candidate proves—and what it does not.</h2>
+        <div class="truth-grid">
+          <div class="truth yes">
+            <h3>Supported by source and authored tests</h3>
+            <ul>
+              <li>Signed, hash-chained, tamper-evident decision records.</li>
+              <li>Tenant-scoped API roles and authored isolation tests.</li>
+              <li>Multiple persistence and signing backends.</li>
+              <li>Optional external head anchoring and timestamp-response capture.</li>
+              <li>VSN sender/message/body binding with optional, separately configured DNS key lookup.</li>
+              <li>Automated tests are authored for core, isolation, packaging, and deployment contracts.</li>
+            </ul>
+          </div>
+          <div class="truth no">
+            <h3>Not established</h3>
+            <ul>
+              <li>No verified production deployment, SLA, hosted service, or customer pilot.</li>
+              <li>No automatic universal seven-year retention or deletion lifecycle.</li>
+              <li>No general SPF, DKIM, DMARC, sender-behavior, or inbox gateway product.</li>
+              <li>No enterprise SSO/MFA or persistent credential-lifecycle service.</li>
+              <li>No independent audit, penetration test, SOC 2 report, or certification.</li>
+              <li>No claim that a legal entity, Partner status, or signing authority exists.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="notice gold" style="margin-top:24px"><strong>Language matters.</strong> “Tamper-evident” describes the default ledger. “Tamper-proof,” “immutable,” “compliant,” “certified,” and “production-ready” require evidence that this repository does not currently contain.</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="eyebrow">Operating control</div>
+        <h2>Accountability is visible.<br>Authority stays explicit.</h2>
+        <p class="section-intro">The shared operating charter assigns product, engineering, operations, and commercial outcomes. It does not manufacture legal status, economics, employment, or signing power.</p>
+        <div class="grid-4">
+          <div class="card"><h3>Samuel</h3><p>Product intent, trust meaning, approved claims, scope acceptance, and cross-domain decisions.</p></div>
+          <div class="card gold"><h3>Justin</h3><p>Architecture, implementation, release evidence, cloud/security operations, recovery, and technical incidents.</p></div>
+          <div class="card"><h3>Josh</h3><p>Operating records, adviser workflow, privacy, contracts, vendors, assurance coordination, and pilot readiness.</p></div>
+          <div class="card"><h3>Ben</h3><p>Discovery, qualified pipeline, design-partner evidence, approved proposals, and customer handoff.</p></div>
+        </div>
+        <div class="actions">
+          <a class="button secondary" href="about.html">Read role charter</a>
+          <a class="button secondary" href="about.html">Read work register</a>
+          <a class="button secondary" href="about.html">Read legal status</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div><a class="brand" href="index.html"><img src="assets/apple-touch-icon.png" alt=""><span>SIGNET<strong>7</strong></span></a><div class="legal-note">Release-candidate software and a pre-formation project. Repository documentation is not legal, tax, employment, security, or compliance assurance.</div></div>
+      <div class="footer-links"><a href="product.html">Product</a><a href="trust.html">Trust</a><a href="integrations.html">Integrations</a><a href="about.html">Team</a><a href="privacy.html">Privacy status</a><a href="docs.html">Docs</a></div>
+    </div>
+  </footer>
+</body>
+</html>
