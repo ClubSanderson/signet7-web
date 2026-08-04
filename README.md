@@ -6,7 +6,7 @@
 
 ## Reasoning
 
-The previous public export identified Signet7 as the “gatekeeper for the AI inbox” and rendered retired logo artwork. The v2 rollout aligns the public front door with the approved circular identity and evidence-bounded brand promise.
+The previous public export used retired AI-inbox positioning and logo artwork. The v2 rollout aligns the public front door with the approved circular identity and evidence-bounded brand promise.
 
 ## Final implementation
 
