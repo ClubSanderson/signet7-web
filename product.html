@@ -1,37 +1,172 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Separate the request fields Signet7 accepts from the bounded fields and fingerprint it stores in a signed tenant record.">
+  <meta name="description" content="Understand Signet7's cryptographic email evidence and the Verifiable Sender Network managed trust infrastructure.">
   <meta name="theme-color" content="#030609">
-  <title>Product Boundary | Signet7</title>
+  <title>Email Trust Product | Signet7</title>
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
-  <header class="site-header"><nav class="nav container" aria-label="Primary"><a class="brand" href="index.html"><img src="assets/apple-touch-icon.png" alt=""><span>SIGNET<strong>7</strong></span></a><div class="nav-links"><a href="product.html" aria-current="page">Product</a><a href="trust.html">Trust</a><a href="integrations.html">Integrations</a><a href="about.html">Team</a><a href="docs.html">Docs</a><a class="nav-cta" href="docs.html">Candidate status</a></div></nav></header>
-  <main>
-    <section class="page-hero"><div class="container"><div class="eyebrow">Explicit request · bounded payload · policy verdict</div><div class="badge-row"><span class="badge cyan">0.2.0rc1 production candidate</span><span class="badge gold">No raw transcript claim</span></div><h1>Record the decision path <span class="gradient-text">you actually integrate.</span></h1><p class="hero-copy">Signet7 accepts explicit tenant-scoped request fields, applies its current exact-action policy, and seals a bounded payload and request fingerprint into a signed, hash-chained record.</p><div class="actions"><a class="button primary" href="docs.html">Inspect candidate status</a><a class="button secondary" href="trust.html">Review trust model</a></div></div></section>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Primary">
+      <a class="brand" href="index.html"><img src="assets/signet7-logo.png" alt="Signet7 circular S7 seal"><span>SIGNET<strong>7</strong></span></a>
+      <div class="nav-links">
+        <a href="product.html" aria-current="page">Product</a>
+        <a href="trust.html">Trust</a>
+        <a href="integrations.html">Integrations</a>
+        <a href="brand.html">Brand</a>
+        <a href="about.html">Team</a>
+        <a href="docs.html">Docs</a>
+        <a class="nav-cta" href="docs.html">Candidate status</a>
+      </div>
+    </nav>
+  </header>
 
-    <section class="page-band"><div class="container proof-rail"><div class="proof-item"><b>Intake</b><span>Caller supplies five required strings and optional provenance inputs.</span></div><div class="proof-item"><b>Decision</b><span>Current exact-action rules return an allow/block policy-verdict status.</span></div><div class="proof-item"><b>Record</b><span>Protected IDs, fingerprint, action, provenance and verdict enter the signed chain.</span></div><div class="proof-item"><b>Verify</b><span>Signer trust, tenant binding and expected-head checks use separate inputs.</span></div></div></section>
+  <main id="main-content">
+    <div class="brand-halo" aria-hidden="true"><img src="assets/signet7-logo.png" alt=""></div>
+    <section class="page-hero">
+      <div class="container">
+        <div class="eyebrow">Email provenance · integrity · evidence · managed trust</div>
+        <div class="badge-row">
+          <span class="badge cyan">Email-first product model</span>
+          <span class="badge gold">Current foundation + roadmap</span>
+        </div>
+        <h1>One platform. <span class="gradient-text">One managed trust framework.</span></h1>
+        <p class="hero-copy">Signet7 combines cryptographic evidence for protected email with the Verifiable Sender Network's managed enrollment, discovery, status, lifecycle, scalable verification, and enterprise administration.</p>
+      </div>
+    </section>
 
-    <section class="section"><div class="container split"><div><div class="eyebrow">One bounded contract</div><h2>Accepted request ≠ persisted record.</h2><p class="section-intro">The API accepts explicit request fields, but the ledger stores a bounded payload. The raw message body and submitted VSN signature/public key are not persisted verbatim.</p><div class="scope-list"><div class="scope-row"><b>Required intake</b><span>Agent ID, message ID, claimed sender, message body and requested action.</span></div><div class="scope-row"><b>Optional intake</b><span>VSN signature and public key for supported provenance evaluation.</span></div><div class="scope-row"><b>Fingerprint</b><span>Covers raw identifiers, body hash, action and optional provenance inputs; it is not a transcript.</span></div><div class="scope-row"><b>Persisted payload</b><span>Protected identifiers, request fingerprint, action, provenance auth state and policy verdict.</span></div><div class="scope-row"><b>Chain metadata</b><span>Tenant/record/time, sequence, nonce, previous hash, signer metadata and signature.</span></div></div></div><div class="code-panel"><div class="code-head">Illustrative accepted request · validate against live OpenAPI</div><pre tabindex="0" aria-label="Illustrative decision request">POST /api/v1/decisions
-{
-  "agent_id": "demo-agent",
-  "message_id": "demo-0001",
-  "claimed_sender": "operator@example.test",
-  "message_body": "Approve a routine internal action",
-  "action_taken": "routine_action"
-}</pre></div></div></section>
+    <section class="section">
+      <div class="container">
+        <div class="eyebrow">Core email capability</div>
+        <h2>Declare coverage. Verify the evidence.</h2>
+        <p class="section-intro">The intended product flow begins with an important email—not an agent action.</p>
+        <div class="grid-3">
+          <article class="card"><div class="icon">01</div><h3>Prepare</h3><p>Normalize a versioned set of message components and declare exactly what the signature covers.</p></article>
+          <article class="card"><div class="icon">02</div><h3>Sign</h3><p>Bind the covered representation to an authorized key and relevant sender or organization context.</p></article>
+          <article class="card"><div class="icon">03</div><h3>Verify</h3><p>Resolve key/status trust, detect changes to covered components, and produce an explicit result.</p></article>
+          <article class="card"><div class="icon">04</div><h3>Preserve</h3><p>Create tamper-evident evidence with signer, coverage, result, chain, and custody metadata.</p></article>
+          <article class="card"><div class="icon">05</div><h3>Export</h3><p>Allow later validation with separately controlled signer, tenant, and expected-head inputs.</p></article>
+          <article class="card"><div class="icon">06</div><h3>Integrate</h3><p>Connect providers, gateways, recipient systems, archives, evidence tools, AI-agent policy gates, workflow automation, compliance pipelines, ERP/CRM systems, and enterprise records consumers.</p></article>
+        </div>
+      </div>
+    </section>
 
-    <section class="section section-line"><div class="container"><div class="eyebrow">Record path</div><h2>Five explicit steps.</h2><div class="flow"><div class="flow-step"><b>Caller</b><span>Submits the explicit request through HTTP/OpenAPI, the MCP decision tool or an integrated caller.</span></div><div class="flow-step"><b>Scope</b><span>Normalizes tenant and resolves credential role and provenance inputs.</span></div><div class="flow-step"><b>Policy</b><span>Evaluates current exact-action rules and returns a verdict status.</span></div><div class="flow-step"><b>Ledger</b><span>Canonicalizes, chains and signs the bounded persisted payload.</span></div><div class="flow-step"><b>Verifier</b><span>Checks integrity plus supplied signer, tenant and expected-head inputs.</span></div></div><div class="notice gold" style="margin-top:24px"><strong>Enforcement boundary.</strong> The integrating caller must act on the returned policy result before external execution.</div></div></section>
+    <section id="vsn" class="section section-line">
+      <div class="container split">
+        <div>
+          <div class="eyebrow">Verifiable Sender Network</div>
+          <h2>The managed trust infrastructure.</h2>
+          <p class="section-intro">VSN establishes and maintains the organizational relationships, key status, lifecycle governance, scalable verification, and administration that make Signet7's cryptographic evidence model usable at enterprise scale.</p>
+        </div>
+        <div class="scope-list">
+          <div class="scope-row"><b>Enrollment</b><span>Organization, sender, administrator, and key relationships.</span></div>
+          <div class="scope-row"><b>Discovery</b><span>Managed resolution of key and trust status.</span></div>
+          <div class="scope-row"><b>Lifecycle</b><span>Rotation, revocation, recovery, expiry, and audit history.</span></div>
+          <div class="scope-row"><b>Enterprise</b><span>Policy, administration, scale, monitoring, support, and abuse controls.</span></div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="notice gold"><strong>Status:</strong> these are approved product-direction capabilities, not a claim that the complete managed service is operating today.</div>
+      </div>
+    </section>
 
-    <section class="section"><div class="container"><div class="eyebrow">Implemented surface</div><h2>Technical seams with named limits.</h2><div class="grid-3"><article class="card hot"><div class="icon">01</div><h3>Signed tenant ledger</h3><p>Bounded decision payloads with sequence, nonce, previous hash, signer identity and signature.</p></article><article class="card hot"><div class="icon">02</div><h3>Export and verifier</h3><p>JSON/evidence-bundle paths plus distinct integrity, signer-trust, tenant-binding and expected-head checks.</p></article><article class="card"><div class="icon">03</div><h3>Storage and signing</h3><p>Local file/SQLite implementations plus DynamoDB adapter code; local Ed25519 plus AWS KMS adapter code.</p></article><article class="card"><div class="icon">04</div><h3>Optional anchoring</h3><p>S3 Object Lock head receipts and historical qualification when explicitly configured.</p></article><article class="card"><div class="icon">05</div><h3>Records governance</h3><p>Versioned retention policy, legal holds, audit events, checkpoints and evidence export.</p></article><article class="card"><div class="icon">06</div><h3>Interfaces</h3><p>HTTP/OpenAPI, a bounded MCP decision tool, CLI, dashboard, metrics and Windows launcher/installer definitions.</p></article></div></div></section>
+    <section class="section">
+      <div class="container">
+        <div class="eyebrow">Platform model</div>
+        <h2>Cryptographic evidence and managed trust, operating together.</h2>
+        <div class="grid-3">
+          <article class="card">
+            <h3>Protected evidence</h3>
+            <p>Defined message coverage, cryptographic signing, explicit verification results, and portable records.</p>
+            <p><small>Complete MIME and attachment coverage remains email-MVP work.</small></p>
+          </article>
+          <article class="card hot">
+            <h3>Managed VSN trust</h3>
+            <p>Organizational enrollment, discovery, status, rotation, revocation, lifecycle governance, and scalable verification.</p>
+            <p><small>The complete managed service remains planned.</small></p>
+          </article>
+          <article class="card">
+            <h3>Enterprise operations</h3>
+            <p>Administration, integrations, evidence operations, support, audit, and organization-specific controls.</p>
+            <p><small>No price, SLA, or final service commitment is approved.</small></p>
+          </article>
+        </div>
+        <div class="notice"><strong>Platform principle:</strong> verification remains portable and independently checkable, while VSN supplies the managed organizational trust needed at scale. Technical interoperability is not positioned as a complete substitute for VSN.</div>
+      </div>
+    </section>
 
-    <section class="section section-line"><div class="container"><div class="eyebrow">Claim boundary</div><h2>Not established by this candidate.</h2><div class="truth-grid"><div class="truth no"><h3>No invisible universal capture</h3><ul><li>No every-prompt, chain-of-thought, tool-call or external-API transcript.</li><li>No general mailbox, SPF, DKIM, DMARC or behavioral identity product.</li><li>No automatic control of every downstream framework action.</li></ul></div><div class="truth no"><h3>No deployment or assurance shortcut</h3><ul><li>No hosted service, accepted production deployment, SLA or live AWS evidence.</li><li>No customer, pilot, testimonial, pricing, launch-date or adoption claim.</li><li>No independent audit, penetration test, certification or universal compliance claim.</li></ul></div></div></div></section>
+    <section class="section section-line">
+      <div class="container">
+        <div class="eyebrow">Delivery status</div>
+        <h2>Foundation, email MVP, managed service, extension.</h2>
+        <table class="data-table">
+          <thead>
+            <tr><th>Layer</th><th>Current state</th><th>What remains</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Cryptographic foundation</strong></td><td>Sender/message/body signatures, optional action binding, key trust paths</td><td>Exact-candidate review and productized email contracts</td></tr>
+            <tr><td><strong>Evidence foundation</strong></td><td>Signed hash chain, tenant scope, export, detached verification, optional anchoring</td><td>Deployment, custody, complete-history, and operational evidence</td></tr>
+            <tr><td><strong>Email MVP</strong></td><td>Partial input/signature foundation</td><td>MIME canonicalization, attachment/component coverage, recipient result, replay/status behavior, provider workflows</td></tr>
+            <tr><td><strong>Managed VSN</strong></td><td>Enrollment/trust/DNS foundations</td><td>Operated enrollment, lifecycle, revocation, administration, scale, support, abuse controls, SLA evidence</td></tr>
+            <tr><td><strong>Agent extension</strong></td><td>Decision endpoint, policy path, MCP and demo tooling</td><td>Keep secondary; version any future email-evidence consumer contract</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="eyebrow">Coverage boundary</div>
+        <h2>No protection claim without an exact coverage declaration.</h2>
+        <div class="truth-grid">
+          <div class="truth yes">
+            <h3>Current exact input</h3>
+            <ul>
+              <li>Normalized sender.</li>
+              <li>Message identifier.</li>
+              <li>Message body string.</li>
+              <li>Optional exact action in the extension profile.</li>
+            </ul>
+          </div>
+          <div class="truth no">
+            <h3>Not yet complete</h3>
+            <ul>
+              <li>Full MIME header/body canonicalization.</li>
+              <li>Comprehensive attachments and nested MIME parts.</li>
+              <li>Provider-specific transformations and rendering.</li>
+              <li>Recipient inbox indicator and explanation UX.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-line">
+      <div class="container split">
+        <div>
+          <div class="eyebrow">Next review</div>
+          <h2>Start with evidence, not a sales sentence.</h2>
+          <p class="section-intro">Use the product-status and trust sources to evaluate what exists. Use the roadmap to evaluate what must be built.</p>
+        </div>
+        <div class="actions">
+          <a class="button primary" href="docs.html">Current capability</a>
+          <a class="button secondary" href="trust.html">Trust model</a>
+        </div>
+      </div>
+    </section>
   </main>
-  <footer class="footer"><div class="container footer-grid"><div><a class="brand" href="index.html"><img src="assets/apple-touch-icon.png" alt=""><span>SIGNET<strong>7</strong></span></a><div class="legal-note">Release-candidate software and a pre-formation project. Product language is bounded by current implementation and verified evidence.</div></div><div class="footer-links"><a href="trust.html">Trust</a><a href="integrations.html">Integrations</a><a href="privacy.html">Privacy status</a>Claims</div></div></footer>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div><a class="brand" href="index.html"><img src="assets/signet7-logo.png" alt="Signet7 circular S7 seal"><span>SIGNET<strong>7</strong></span></a><div class="legal-note">Product direction and current implementation are separate. No final package, price, entitlement, deployment, or SLA is offered here.</div></div>
+      <div class="footer-links"><a href="brand.html">Brand</a><a href="index.html">Overview</a><a href="trust.html">Trust</a><a href="integrations.html">Integrations</a><a href="docs.html">Docs</a><a href="privacy.html">Privacy status</a></div>
+    </div>
+  </footer>
 </body>
 </html>

@@ -1,28 +1,170 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Navigate current Signet7 product status, architecture, configuration, operations, runbooks, integrations, governance, and verification guidance.">
+  <meta name="description" content="Signet7 documentation map for the email trust product, current candidate, Verifiable Sender Network, evidence, integrations, and operations.">
   <meta name="theme-color" content="#030609">
-  <title>Documentation Map | Signet7</title>
+  <title>Documentation | Signet7</title>
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
-  <header class="site-header"><nav class="nav container" aria-label="Primary"><a class="brand" href="index.html"><img src="assets/apple-touch-icon.png" alt=""><span>SIGNET<strong>7</strong></span></a><div class="nav-links"><a href="product.html">Product</a><a href="trust.html">Trust</a><a href="integrations.html">Integrations</a><a href="about.html">Team</a><a href="docs.html" aria-current="page">Docs</a><a class="nav-cta" href="docs.html">Candidate status</a></div></nav></header>
-  <main>
-    <section class="page-hero"><div class="container"><div class="eyebrow">Product truth · operation · verification · governance</div><div class="badge-row"><span class="badge cyan">Documentation-led evaluation</span><span class="badge gold">Code and evidence remain authoritative</span></div><h1>Start with the status. <span class="gradient-text">Follow the evidence.</span></h1><p class="hero-copy">Use this map to move from current capability and limits into architecture, configuration, operations, integration and independent verification.</p><p class="hero-copy" style="margin-top:18px;padding:14px 18px;border:1px solid rgba(0,240,255,.25);border-radius:10px"><strong>Access note.</strong> Source documentation accompanies the private Signet7 repository. Qualified evaluators may request access through the <a href="about.html">team</a>.</p></div></section>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Primary">
+      <a class="brand" href="index.html"><img src="assets/signet7-logo.png" alt="Signet7 circular S7 seal"><span>SIGNET<strong>7</strong></span></a>
+      <div class="nav-links">
+        <a href="product.html">Product</a>
+        <a href="trust.html">Trust</a>
+        <a href="integrations.html">Integrations</a>
+        <a href="brand.html">Brand</a>
+        <a href="about.html">Team</a>
+        <a href="docs.html" aria-current="page">Docs</a>
+        <a class="nav-cta" href="docs.html">Candidate status</a>
+      </div>
+    </nav>
+  </header>
 
-    <section class="section"><div class="container split"><div><div class="eyebrow">Start here</div><h2>Current truth and limits.</h2><div class="doc-list"><div class="doc-link"><span class="doc-num">01</span><span><b>Product status</b><small>Implemented, tested, planned, blocked and not established.</small></span></div><div class="doc-link"><span class="doc-num">02</span><span><b>Trust and compliance boundary</b><small>What technical evidence may and may not support.</small></span></div><div class="doc-link"><span class="doc-num">03</span><span><b>Campaign claims register</b><small>Atomic safe wording, evidence maturity and prohibited escalation.</small></span></div><div class="doc-link"><span class="doc-num">04</span><span><b>Repository overview</b><small>Quick start, interfaces, verification and source structure.</small></span></div></div></div><div class="card gold"><div class="mini-label">Evidence order</div><h3 style="font-size:26px;margin-top:16px">Do not promote a lower plane.</h3><ol style="color:#aebfca"><li>Exact code and behavior</li><li>Exact-generation tests</li><li>Real provider qualification</li><li>Deployed runtime evidence</li><li>Independent assessment</li><li>Permissioned customer result</li></ol><p>Plans, IaC, decks, screenshots and role titles are not substitutes.</p></div></div></section>
+  <main id="main-content">
+    <div class="brand-halo" aria-hidden="true"><img src="assets/signet7-logo.png" alt=""></div>
+    <section class="page-hero">
+      <div class="container">
+        <div class="eyebrow">Product truth · implementation evidence · operating controls</div>
+        <div class="badge-row">
+          <span class="badge cyan">Repository documentation map</span>
+          <span class="badge gold">Read status before roadmap</span>
+        </div>
+        <h1>Start with what is <span class="gradient-text">true now.</span></h1>
+        <p class="hero-copy">These sources separate the email-first product direction from the capabilities present in the current release candidate. A roadmap statement is not implementation evidence.</p>
+      </div>
+    </section>
 
-    <section class="section section-line"><div class="container"><div class="eyebrow">Build and integrate</div><h2>Architecture and contracts.</h2><div class="doc-list"><div class="doc-link"><span class="doc-num">A1</span><span><b>Architecture</b><small>Components, state, data flow and trust boundaries.</small></span></div><div class="doc-link"><span class="doc-num">A2</span><span><b>Canonical signed-ledger format</b><small>Byte representation and verification rules.</small></span></div><div class="doc-link"><span class="doc-num">A3</span><span><b>OpenAPI source contract</b><small>Current HTTP endpoints, roles, request fields, schemas and errors.</small></span></div><div class="doc-link"><span class="doc-num">A4</span><span><b>Agent harnesses</b><small>Authenticated Hermes, OpenClaw, LangGraph, CrewAI and AutoGen patterns.</small></span></div><div class="doc-link"><span class="doc-num">A5</span><span><b>VSN profile</b><small>Supported bound-signature and trust-discovery semantics.</small></span></div></div></div></section>
+    <section class="section">
+      <div class="container">
+        <div class="eyebrow">First read</div>
+        <h2>Four documents establish the hierarchy.</h2>
+        <div class="grid-2">
+          <article class="card hot">
+            <h3>Canonical product definition</h3>
+            <p>The authoritative identity of Signet7: verifiable email at the center, VSN as the managed trust infrastructure, and automation as a supporting extension.</p>
+            <p><a href="docs.html">Read the definition →</a></p>
+          </article>
+          <article class="card">
+            <h3>Product status</h3>
+            <p>The current candidate's implemented, partial, absent, and unverified capabilities. Use this source for “does it exist now?” questions.</p>
+            <p><a href="docs.html">Read current status →</a></p>
+          </article>
+          <article class="card">
+            <h3>Architecture</h3>
+            <p>The technical boundaries, trust inputs, data flow, evidence model, and separation between the current foundation and intended email product.</p>
+            <p><a href="docs.html">Read the architecture →</a></p>
+          </article>
+          <article class="card">
+            <h3>Trust and compliance</h3>
+            <p>Precise meanings for provenance, tamper evidence, verification, anchoring, identity, retention, and compliance language.</p>
+            <p><a href="docs.html">Read the trust boundaries →</a></p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-    <section class="section"><div class="container"><div class="eyebrow">Configure and operate</div><h2>Production controls and recovery.</h2><div class="grid-2"><div class="doc-list"><div class="doc-link"><span class="doc-num">O1</span><span><b>Configuration</b><small>Runtime variables, production invariants and safe changes.</small></span></div><div class="doc-link"><span class="doc-num">O2</span><span><b>Operations</b><small>Service acceptance, health, readiness and operational evidence.</small></span></div><div class="doc-link"><span class="doc-num">O3</span><span><b>Runbook index</b><small>Deployment, credentials, anchors, backup, incidents and recovery.</small></span></div></div><div class="doc-list"><div class="doc-link"><span class="doc-num">O4</span><span><b>Deployment and rollback</b><small>Controlled promotion and failure recovery.</small></span></div><div class="doc-link"><span class="doc-num">O5</span><span><b>Anchor reconciliation</b><small>Historical coverage, retention validation and readiness.</small></span></div><div class="doc-link"><span class="doc-num">O6</span><span><b>Evidence recovery</b><small>Restore and verify evidence without inventing completeness.</small></span></div></div></div></div></section>
+    <section class="section section-line">
+      <div class="container">
+        <div class="eyebrow">Email and VSN</div>
+        <h2>Product specifications and integration evidence.</h2>
+        <div class="grid-3">
+          <article class="card">
+            <h3>VSN specification</h3>
+            <p>The Signet7-specific sender/key discovery and trust profile. It is not an IETF standard and does not by itself prove a legal identity.</p>
+            <p><a href="docs.html">Read VSN_SPEC.md →</a></p>
+          </article>
+          <article class="card">
+            <h3>VSN email sender</h3>
+            <p>The limited sender helper and its exact assumptions. Treat it as evaluation tooling, not evidence of a complete provider integration.</p>
+            <p><a href="docs.html">Read the sender guide →</a></p>
+          </article>
+          <article class="card">
+            <h3>Integration index</h3>
+            <p>Current software integration surfaces and the distinction between library, service, CLI, and optional agent consumers.</p>
+            <p><a href="docs.html">Open integration docs →</a></p>
+          </article>
+        </div>
+        <div class="notice gold"><strong>Email-MVP gap:</strong> complete MIME canonicalization, comprehensive attachment coverage, supported provider/mailbox workflows, and recipient-facing verification UX remain roadmap work until implemented and accepted.</div>
+      </div>
+    </section>
 
-    <section class="section section-line"><div class="container"><div class="eyebrow">Accountability</div><h2>Roles, authority and legal boundary.</h2><div class="grid-3"><article class="card"><h3>Operating roles</h3><p>Role and responsibility charter</p><p>Coordinates product, engineering, operations and commercial outcomes.</p></article><article class="card"><h3>Decision rights</h3><p>Authority and decision rights</p><p>Defines review and approval routing without inventing legal authority.</p></article><article class="card gold"><h3>Legal status</h3><p>Legal implementation status</p><p>Executed and filed records—not repository labels—control legal effect.</p></article></div></div></section>
+    <section class="section">
+      <div class="container">
+        <div class="eyebrow">Implement and operate</div>
+        <h2>Configuration is not deployment evidence.</h2>
+        <table class="data-table">
+          <thead>
+            <tr><th>Need</th><th>Source</th><th>Use it for</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Documentation index</strong></td><td><a href="docs.html">09-operations/docs/README.md</a></td><td>Orientation and source routing</td></tr>
+            <tr><td><strong>Configuration</strong></td><td><a href="docs.html">CONFIGURATION.md</a></td><td>Candidate settings, modes, and validation</td></tr>
+            <tr><td><strong>Operations</strong></td><td><a href="docs.html">OPERATIONS.md</a></td><td>Runbooks, evidence, recovery, and promotion gates</td></tr>
+            <tr><td><strong>Serialization</strong></td><td><a href="docs.html">CANONICAL-SERIALIZATION.md</a></td><td>Current versioned signing input—not a complete MIME profile</td></tr>
+            <tr><td><strong>Module manual</strong></td><td><a href="docs.html">MODULE-MANUAL.md</a></td><td>Implementation modules and interfaces</td></tr>
+            <tr><td><strong>Runbooks</strong></td><td><a href="docs.html">runbooks/README.md</a></td><td>Qualification, recovery, lifecycle, and records controls</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section section-line">
+      <div class="container">
+        <div class="eyebrow">Evidence standard</div>
+        <h2>Match each statement to the right proof.</h2>
+        <div class="truth-grid">
+          <div class="truth yes">
+            <h3>A capability may be described as current when</h3>
+            <ul>
+              <li>The exact behavior exists in the pinned candidate.</li>
+              <li>Tests cover its important positive and negative paths.</li>
+              <li>Its trust, scope, and failure boundaries are documented.</li>
+              <li>Any deployment claim has environment-specific operating evidence.</li>
+              <li>The claim register permits the wording for the intended audience.</li>
+            </ul>
+          </div>
+          <div class="truth no">
+            <h3>These are not substitutes for proof</h3>
+            <ul>
+              <li>A product vision, architecture diagram, or future-state workflow.</li>
+              <li>A configuration option without an accepted operating record.</li>
+              <li>A demo that omits unsupported MIME, attachment, or status cases.</li>
+              <li>A hash, signature, or anchor without independent trust inputs.</li>
+              <li>A planned package, price, SLA, certification, or customer conversation.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container split">
+        <div>
+          <div class="eyebrow">Supporting agent extension</div>
+          <h2>Keep downstream automation in its lane.</h2>
+          <p class="section-intro">The repository includes optional action binding, policy evaluation, MCP tooling, and an agent harness. These can demonstrate how a caller consumes verified evidence, but the caller remains responsible for enforcement.</p>
+        </div>
+        <article class="card">
+          <h3>Source order</h3>
+          <p>Canonical definition → current status → architecture/trust → exact specification → tests and operating evidence → audience-approved claim.</p>
+          <p><a href="docs.html">Open the claims register →</a></p>
+        </article>
+      </div>
+    </section>
   </main>
-  <footer class="footer"><div class="container footer-grid"><div><a class="brand" href="index.html"><img src="assets/apple-touch-icon.png" alt=""><span>SIGNET<strong>7</strong></span></a><div class="legal-note">This map routes to current source documentation. Resolve any conflict in favor of exact code, executed records and verified evidence.</div></div><div class="footer-links"><a href="product.html">Product</a><a href="trust.html">Trust</a><a href="integrations.html">Integrations</a>Full docs index</div></div></footer>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div><a class="brand" href="index.html"><img src="assets/signet7-logo.png" alt="Signet7 circular S7 seal"><span>SIGNET<strong>7</strong></span></a><div class="legal-note">Documentation links describe a release candidate and product direction. They do not establish production readiness, customer use, certification, an SLA, or a final commercial offer.</div></div>
+      <div class="footer-links"><a href="index.html">Overview</a><a href="product.html">Product</a><a href="trust.html">Trust</a><a href="integrations.html">Integrations</a><a href="about.html">Team</a><a href="brand.html">Brand</a><a href="privacy.html">Privacy status</a></div>
+    </div>
+  </footer>
 </body>
 </html>
