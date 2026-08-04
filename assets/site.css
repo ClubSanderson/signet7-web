@@ -794,3 +794,10 @@ main > section { position: relative; z-index: 1; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: .001ms !important; animation-duration: .001ms !important; }
 }
+
+.token-ink { background: #030609; }
+.token-cyan { background: #37ddff; color: #001016; }
+.token-gold { background: #f2b84b; color: #171006; }
+.token-green { background: #59d99e; color: #03120c; }
+.token-red { background: #ff7c80; color: #170506; }
+.token-cyan span, .token-gold span, .token-green span, .token-red span { color: currentColor; opacity: .78; }
