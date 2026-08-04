@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Current privacy and data-collection status for the static Signet7 project site.">
+  <meta name="description" content="Current privacy status and product-data boundaries for the Signet7 email trust project.">
   <meta name="theme-color" content="#030609">
   <title>Privacy Status | Signet7</title>
   <link rel="icon" type="image/png" href="assets/favicon.png">
@@ -11,36 +11,148 @@
   <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
-  <header class="site-header"><nav class="nav container" aria-label="Primary"><a class="brand" href="index.html"><img src="assets/apple-touch-icon.png" alt=""><span>SIGNET<strong>7</strong></span></a><div class="nav-links"><a href="product.html">Product</a><a href="trust.html">Trust</a><a href="integrations.html">Integrations</a><a href="about.html">Team</a><a href="docs.html">Docs</a><a class="nav-cta" href="privacy.html" aria-current="page">Privacy status</a></div></nav></header>
-  <main>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Primary">
+      <a class="brand" href="index.html"><img src="assets/signet7-circle-logo-official-v2.png" alt="Signet7 — Verify the Sender, Seal the Decision"><span>SIGNET<strong>7</strong></span></a>
+      <div class="nav-links">
+        <a href="product.html">Product</a>
+        <a href="trust.html">Trust</a>
+        <a href="integrations.html">Integrations</a>
+        <a href="about.html">Team</a>
+        <a href="docs.html">Docs</a>
+        <a class="nav-cta" href="../../01-strategy/PRODUCT-STATUS.md">Candidate status</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <section class="page-hero">
+      <div class="container">
+        <div class="eyebrow">Privacy design status · data boundaries · unresolved decisions</div>
+        <div class="badge-row">
+          <span class="badge cyan">Transparency notice</span>
+          <span class="badge gold">Not a final privacy policy</span>
+        </div>
+        <h1>Privacy claims should be as <span class="gradient-text">verifiable as the product.</span></h1>
+        <p class="hero-copy">This page explains the current repository and product-design status. It is not a final customer privacy notice, data-processing agreement, retention commitment, or representation that a production service is operating.</p>
+      </div>
+    </section>
+
     <section class="section">
-      <div class="container prose">
-        <div class="eyebrow">Current static-site behavior</div>
-        <h1>No direct lead collection.<br><span class="gradient-text">No fictional consent.</span></h1>
-        <p class="hero-copy">This repository edition of the Signet7 project site is static. It contains no waitlist form, account login, analytics script, advertising tracker, or direct browser-to-Signet7 data-submission workflow.</p>
-        <div class="notice gold"><strong>This is a status statement, not a final commercial privacy policy.</strong> A deployed service, customer pilot, hosted demo, analytics tool, support channel, or lead form requires an approved data map, notice, lawful basis, vendor review, retention/deletion process, and responsible owner before collection begins.</div>
+      <div class="container">
+        <div class="eyebrow">This static site</div>
+        <h2>No collection form is present in this source.</h2>
+        <div class="truth-grid">
+          <div class="truth yes">
+            <h3>What the repository page shows</h3>
+            <ul>
+              <li>Static HTML, CSS, images, and links.</li>
+              <li>No contact, signup, account, payment, or message-upload form.</li>
+              <li>No analytics or advertising script declared by these page sources.</li>
+              <li>No instruction to send email content or personal information through this site.</li>
+            </ul>
+          </div>
+          <div class="truth no">
+            <h3>What cannot be claimed from the page source alone</h3>
+            <ul>
+              <li>That a hosting provider records no IP address, user agent, request path, time, security event, or other access metadata.</li>
+              <li>That every future deployment uses the same hosting, logging, analytics, or cookie configuration.</li>
+              <li>That third-party links have the same privacy practices.</li>
+              <li>That “Signet7 collects no data” in every product or operating context.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <h2>What the static files do</h2>
-        <ul>
-          <li>Load local HTML, CSS, favicon, and logo assets from this repository.</li>
-          <li>Link to repository documentation and locally stored artifacts.</li>
-          <li>Use no embedded third-party font, JavaScript, analytics, chat, or form provider.</li>
-        </ul>
+    <section class="section section-line">
+      <div class="container">
+        <div class="eyebrow">Product data categories</div>
+        <h2>Email trust requires explicit handling decisions.</h2>
+        <table class="data-table">
+          <thead>
+            <tr><th>Category</th><th>Why it may be processed</th><th>Decision still required</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Sender and organization identifiers</strong></td><td>Enrollment, key binding, trust resolution, audit, and administration</td><td>Identity proofing level, authoritative source, corrections, and lifecycle</td></tr>
+            <tr><td><strong>Message identifiers and selected headers</strong></td><td>Coverage, correlation, replay handling, verification, and evidence</td><td>Exact profile, minimization, disclosure, indexing, and retention</td></tr>
+            <tr><td><strong>Bodies, MIME parts, and attachments</strong></td><td>Canonicalization, hashing, signing, and integrity verification</td><td>Local versus service-side processing, transient handling, content retention, encryption, and regional controls</td></tr>
+            <tr><td><strong>Keys and trust status</strong></td><td>Signing, discovery, rotation, revocation, expiry, and recovery</td><td>Custody model, hardware boundaries, public disclosure, recovery, and administrator access</td></tr>
+            <tr><td><strong>Verification and evidence records</strong></td><td>Result explanation, audit, export, incident response, and later validation</td><td>Field-level minimization, completeness, legal hold, access, retention, deletion, and export</td></tr>
+            <tr><td><strong>Operational metadata</strong></td><td>Security, reliability, rate limiting, abuse prevention, support, and diagnostics</td><td>Final telemetry, purpose, access, retention, subprocessor, and notice controls</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
 
-        <h2>Hosting metadata</h2>
-        <p>A hosting provider may independently process ordinary request metadata such as IP address, user agent, requested path, timestamps, and security logs. That behavior depends on the selected host and deployment configuration; it is not defined by these static files. Any public deployment must identify the host and accurately document that processing.</p>
+    <section class="section">
+      <div class="container split">
+        <div>
+          <div class="eyebrow">Current candidate record</div>
+          <h2>Protected identifiers, not a promise of content-free operation.</h2>
+          <p class="section-intro">The current decision path is designed to persist protected identifiers, fingerprints, action/provenance/policy fields, metadata, and evidence-chain information rather than storing the submitted body, signature, or key verbatim in that decision record.</p>
+        </div>
+        <article class="card">
+          <h3>Important boundary</h3>
+          <p>The service necessarily receives inputs to evaluate them, and other routes, logs, deployment components, exports, test fixtures, integrations, or future email workflows may handle different data. The exact deployed flow must be reviewed before making a privacy claim.</p>
+        </article>
+      </div>
+      <div class="container">
+        <div class="notice"><strong>Email-product status:</strong> complete MIME and attachment processing is not implemented. The final architecture must specify whether protected content remains local, is transmitted to a verifier, is retained, or is represented only by derived values at each boundary.</div>
+      </div>
+    </section>
 
-        <h2>Application data warning</h2>
-        <p>The application API can process identifying metadata supplied in decision records. The retired waitlist collector is not exposed. Deployers must not process personal data until privacy, security, access, retention, deletion, and incident obligations are approved and operational.</p>
+    <section class="section section-line">
+      <div class="container">
+        <div class="eyebrow">Verifiable Sender Network</div>
+        <h2>Managed trust creates a lifecycle record.</h2>
+        <p class="section-intro">A complete VSN service is expected to process organization, sender, administrator, key, trust-status, rotation, revocation, recovery, verification, and abuse-prevention data. The managed service is not complete today, so its final data flows and commitments remain subject to design, security, privacy, legal, and operational approval.</p>
+        <div class="grid-3">
+          <article class="card"><h3>Enroll</h3><p>Define what evidence is required, who may act for an organization, and how errors or disputes are corrected.</p></article>
+          <article class="card"><h3>Maintain</h3><p>Record status changes, rotation, revocation, recovery, administrative actions, and applicable audit history.</p></article>
+          <article class="card"><h3>Resolve</h3><p>Expose only the information a verifier needs, with rate limits, abuse controls, status semantics, and privacy review.</p></article>
+        </div>
+      </div>
+    </section>
 
-        <h2>Legal and operating status</h2>
-        <p>Signet7 is documented here as a pre-formation project with release-candidate software version 0.2.0rc1. Repository publication does not establish a legal entity, data controller, processor relationship, customer contract, or authority to make privacy commitments. Effective legal records and approved service terms must identify the responsible party before external collection or service delivery.</p>
+    <section class="section">
+      <div class="container">
+        <div class="eyebrow">Before production</div>
+        <h2>Controls that must be approved.</h2>
+        <div class="scope-list">
+          <div class="scope-row"><b>Roles</b><span>Identify controllers, processors, subprocessors, administrators, custodians, and support access.</span></div>
+          <div class="scope-row"><b>Purpose</b><span>Map every field and derived value to a documented, limited processing purpose.</span></div>
+          <div class="scope-row"><b>Minimization</b><span>Keep only what the selected coverage, verification, evidence, security, and support model requires.</span></div>
+          <div class="scope-row"><b>Retention</b><span>Set category- and tenant-specific periods; no universal “seven years” default is approved.</span></div>
+          <div class="scope-row"><b>Rights</b><span>Define access, correction, deletion, objection, export, dispute, and legal-hold behavior.</span></div>
+          <div class="scope-row"><b>Security</b><span>Qualify encryption, key custody, tenant isolation, access review, incident response, backup, and deletion.</span></div>
+          <div class="scope-row"><b>Location</b><span>Document regional processing, transfers, subprocessors, and customer-controlled deployment choices.</span></div>
+          <div class="scope-row"><b>Notice</b><span>Publish the final privacy notice and contractual terms before collecting production customer data.</span></div>
+        </div>
+      </div>
+    </section>
 
-        <h2>Repository boundary</h2>
-        <p>Do not place customer data, leads, credentials, private keys, legal instruments, signatures, private contact information, or person-specific economic records in the shared product repository. See the trust and claims register and legal implementation status.</p>
+    <section class="section section-line">
+      <div class="container split">
+        <div>
+          <div class="eyebrow">Current action</div>
+          <h2>Do not submit sensitive email through this website.</h2>
+          <p class="section-intro">This static project site does not provide an authorized production intake channel. Do not use it to submit messages, attachments, credentials, personal information, or regulated data.</p>
+        </div>
+        <div class="actions">
+          <a class="button primary" href="../../01-strategy/PRODUCT-STATUS.md">Review current status</a>
+          <a class="button secondary" href="trust.html">Review trust boundaries</a>
+        </div>
       </div>
     </section>
   </main>
-  <footer class="footer"><div class="container footer-grid"><div><a class="brand" href="index.html"><img src="assets/apple-touch-icon.png" alt=""><span>SIGNET<strong>7</strong></span></a><div class="legal-note">Current repository status. Review after any hosting, collection, analytics, pilot, customer, vendor, or legal-status change.</div></div><div class="footer-links"><a href="index.html">Overview</a><a href="product.html">Product</a><a href="trust.html">Trust</a><a href="docs.html">Docs</a>Security</div></div></footer>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div><a class="brand" href="index.html"><img src="assets/signet7-circle-logo-official-v2.png" alt="Signet7 — Verify the Sender, Seal the Decision"><span>SIGNET<strong>7</strong></span></a><div class="legal-note">Draft transparency page only. Legal and privacy review is required before any public privacy policy, production data collection, retention promise, or customer processing commitment.</div></div>
+      <div class="footer-links"><a href="index.html">Overview</a><a href="product.html">Product</a><a href="trust.html">Trust</a><a href="integrations.html">Integrations</a><a href="about.html">Team</a><a href="docs.html">Docs</a></div>
+    </div>
+  </footer>
 </body>
 </html>
