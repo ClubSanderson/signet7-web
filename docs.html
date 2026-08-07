@@ -21,7 +21,7 @@
         <a href="integrations.html">Integrations</a>
         <a href="about.html">Team</a>
         <a href="docs.html" aria-current="page">Docs</a>
-        <a class="nav-cta" href="../../01-strategy/PRODUCT-STATUS.md">Candidate status</a>
+        <a class="nav-cta" href="docs.html#candidate-status">Candidate status</a>
       </div>
     </nav>
   </header>
@@ -39,7 +39,7 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section" id="candidate-status">
       <div class="container">
         <div class="eyebrow">First read</div>
         <h2>Four documents establish the hierarchy.</h2>
@@ -47,22 +47,22 @@
           <article class="card hot">
             <h3>Canonical product definition</h3>
             <p>The authoritative identity of Signet7: verifiable email at the center, VSN as the managed trust infrastructure, and automation as a supporting extension.</p>
-            <p><a href="../../01-strategy/CANONICAL-PRODUCT-DEFINITION.md">Read the definition →</a></p>
+            <p><a href="product.html">Read the public product model →</a></p>
           </article>
           <article class="card">
             <h3>Product status</h3>
             <p>The current candidate's implemented, partial, absent, and unverified capabilities. Use this source for “does it exist now?” questions.</p>
-            <p><a href="../../01-strategy/PRODUCT-STATUS.md">Read current status →</a></p>
+            <p><a href="docs.html#candidate-status">Read current status →</a></p>
           </article>
           <article class="card">
             <h3>Architecture</h3>
             <p>The technical boundaries, trust inputs, data flow, evidence model, and separation between the current foundation and intended email product.</p>
-            <p><a href="../../01-strategy/ARCHITECTURE.md">Read the architecture →</a></p>
+            <p><a href="product.html">Read the public architecture model →</a></p>
           </article>
           <article class="card">
             <h3>Trust and compliance</h3>
             <p>Precise meanings for provenance, tamper evidence, verification, anchoring, identity, retention, and compliance language.</p>
-            <p><a href="../../01-strategy/TRUST-AND-COMPLIANCE.md">Read the trust boundaries →</a></p>
+            <p><a href="trust.html#claim-boundary">Read the public trust boundaries →</a></p>
           </article>
         </div>
       </div>
@@ -76,24 +76,24 @@
           <article class="card">
             <h3>VSN specification</h3>
             <p>The Signet7-specific sender/key discovery and trust profile. It is not an IETF standard and does not by itself prove a legal identity.</p>
-            <p><a href="../../09-operations/docs/VSN_SPEC.md">Read VSN_SPEC.md →</a></p>
+            <p><a href="integrations.html">Review the public integration boundary →</a></p>
           </article>
           <article class="card">
             <h3>VSN email sender</h3>
             <p>The limited sender helper and its exact assumptions. Treat it as evaluation tooling, not evidence of a complete provider integration.</p>
-            <p><a href="../../09-operations/docs/integrations/VSN-EMAIL-SENDER.md">Read the sender guide →</a></p>
+            <p><a href="integrations.html">Review the public sender boundary →</a></p>
           </article>
           <article class="card">
             <h3>Integration index</h3>
             <p>Current software integration surfaces and the distinction between library, service, CLI, and optional agent consumers.</p>
-            <p><a href="../../09-operations/docs/integrations/README.md">Open integration docs →</a></p>
+            <p><a href="integrations.html">Open the public integration map →</a></p>
           </article>
         </div>
         <div class="notice gold"><strong>Email-MVP gap:</strong> complete MIME canonicalization, comprehensive attachment coverage, supported provider/mailbox workflows, and recipient-facing verification UX remain roadmap work until implemented and accepted.</div>
       </div>
     </section>
 
-    <section class="section">
+    <section class="section" id="private-sources">
       <div class="container">
         <div class="eyebrow">Implement and operate</div>
         <h2>Configuration is not deployment evidence.</h2>
@@ -102,12 +102,12 @@
             <tr><th>Need</th><th>Source</th><th>Use it for</th></tr>
           </thead>
           <tbody>
-            <tr><td><strong>Documentation index</strong></td><td><a href="../../09-operations/docs/README.md">09-operations/docs/README.md</a></td><td>Orientation and source routing</td></tr>
-            <tr><td><strong>Configuration</strong></td><td><a href="../../09-operations/docs/CONFIGURATION.md">CONFIGURATION.md</a></td><td>Candidate settings, modes, and validation</td></tr>
-            <tr><td><strong>Operations</strong></td><td><a href="../../09-operations/docs/OPERATIONS.md">OPERATIONS.md</a></td><td>Runbooks, evidence, recovery, and promotion gates</td></tr>
-            <tr><td><strong>Serialization</strong></td><td><a href="../../09-operations/docs/specs/CANONICAL-SERIALIZATION.md">CANONICAL-SERIALIZATION.md</a></td><td>Current versioned signing input—not a complete MIME profile</td></tr>
-            <tr><td><strong>Module manual</strong></td><td><a href="../../09-operations/docs/MODULE-MANUAL.md">MODULE-MANUAL.md</a></td><td>Implementation modules and interfaces</td></tr>
-            <tr><td><strong>Runbooks</strong></td><td><a href="../../09-operations/docs/runbooks/README.md">runbooks/README.md</a></td><td>Qualification, recovery, lifecycle, and records controls</td></tr>
+            <tr><td><strong>Documentation index</strong></td><td><code>docs/README.md</code></td><td>Private-repository orientation and source routing</td></tr>
+            <tr><td><strong>Configuration</strong></td><td><code>docs/CONFIGURATION.md</code></td><td>Candidate settings, modes, and validation</td></tr>
+            <tr><td><strong>Operations</strong></td><td><code>docs/OPERATIONS.md</code></td><td>Runbooks, evidence, recovery, and promotion gates</td></tr>
+            <tr><td><strong>Serialization</strong></td><td><code>docs/specs/CANONICAL-SERIALIZATION.md</code></td><td>Current versioned signing input—not a complete MIME profile</td></tr>
+            <tr><td><strong>Module manual</strong></td><td><code>docs/MODULE-MANUAL.md</code></td><td>Implementation modules and interfaces</td></tr>
+            <tr><td><strong>Runbooks</strong></td><td><code>docs/runbooks/README.md</code></td><td>Qualification, recovery, lifecycle, and records controls</td></tr>
           </tbody>
         </table>
       </div>
@@ -152,7 +152,7 @@
         <article class="card">
           <h3>Source order</h3>
           <p>Canonical definition → current status → architecture/trust → exact specification → tests and operating evidence → audience-approved claim.</p>
-          <p><a href="../../01-strategy/marketing/CLAIMS-REGISTER.md">Open the claims register →</a></p>
+          <p><a href="trust.html#claim-boundary">Review the public claim boundary →</a></p>
         </article>
       </div>
     </section>
