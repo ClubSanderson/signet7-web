@@ -22,6 +22,7 @@ This repository is the sanitized public export of `10-product/www/` in the priva
 
 ## Deployment
 
-- Hosting: GitHub Pages from `main`.
+- Hosting: GitHub Pages through `.github/workflows/pages.yml`.
+- Authorization: manual `workflow_dispatch` only. A push must never publish the site.
 - Domains: `signet7.io` and `www.signet7.io`.
 - Runtime: static local assets only.
