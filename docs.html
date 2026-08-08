@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Signet7 documentation map for the email trust product, current candidate, Verifiable Sender Network, evidence, integrations, and operations.">
+  <meta name="description" content="Public Signet7 status map for candidate email verification, evidence, recovery, integration boundaries, default-off epochs, and absent live production gates.">
   <meta name="theme-color" content="#030609">
   <title>Documentation | Signet7</title>
   <link rel="icon" type="image/png" href="assets/favicon.png">
@@ -35,7 +35,7 @@
           <span class="badge gold">Read status before roadmap</span>
         </div>
         <h1>Start with what is <span class="gradient-text">true now.</span></h1>
-        <p class="hero-copy">These sources separate the email-first product direction from the capabilities present in the current release candidate. A roadmap statement is not implementation evidence.</p>
+        <p class="hero-copy">These sources separate the email-first product direction from capabilities present in the current source candidate, operator/integrator responsibilities, and gates that have no live evidence. A roadmap or workflow file is not deployment evidence.</p>
       </div>
     </section>
 
@@ -46,7 +46,7 @@
         <div class="grid-2">
           <article class="card hot">
             <h3>Canonical product definition</h3>
-            <p>The authoritative identity of Signet7: verifiable email at the center, VSN as the managed trust infrastructure, and automation as a supporting extension.</p>
+            <p>The authoritative identity of Signet7: verifiable email at the center, VSN as planned managed trust infrastructure, and automation as a supporting extension.</p>
             <p><a href="product.html">Read the public product model →</a></p>
           </article>
           <article class="card">
@@ -74,40 +74,40 @@
         <h2>Product specifications and integration evidence.</h2>
         <div class="grid-3">
           <article class="card">
-            <h3>VSN specification</h3>
-            <p>The Signet7-specific sender/key discovery and trust profile. It is not an IETF standard and does not by itself prove a legal identity.</p>
+            <h3>VSN protocol artifacts</h3>
+            <p>Repository artifacts include a Signet7-specific trust profile and a draft/archived transport profile. They are not an IETF RFC and not an independently established production standard; they do not prove legal identity.</p>
             <p><a href="integrations.html">Review the public integration boundary →</a></p>
           </article>
           <article class="card">
-            <h3>VSN email sender</h3>
-            <p>The limited sender helper and its exact assumptions. Treat it as evaluation tooling, not evidence of a complete provider integration.</p>
+            <h3>Signed-email profile</h3>
+            <p>The candidate source implements <code>s7-email-1</code> signing and component-level verification for declared headers, MIME structure, bodies, and attachments. Acceptance remains open, and no live provider qualification has been retained.</p>
             <p><a href="integrations.html">Review the public sender boundary →</a></p>
           </article>
           <article class="card">
-            <h3>Integration index</h3>
-            <p>Current software integration surfaces and the distinction between library, service, CLI, and optional agent consumers.</p>
+            <h3>Operator integration index</h3>
+            <p>Current HTTP, CLI, Gmail-pilot, SES-operator, evidence, recovery, and optional agent surfaces—plus the mailbox and enforcement work an integrator still owns.</p>
             <p><a href="integrations.html">Open the public integration map →</a></p>
           </article>
         </div>
-        <div class="notice gold"><strong>Email-MVP gap:</strong> complete MIME canonicalization, comprehensive attachment coverage, supported provider/mailbox workflows, and recipient-facing verification UX remain roadmap work until implemented and accepted.</div>
+        <div class="notice gold"><strong>Acceptance boundary:</strong> source-built protected-component checks and recipient verification UI/API do not establish qualified Gmail/SES interoperability, a deployed mailbox path, independent security acceptance, or production qualification.</div>
       </div>
     </section>
 
     <section class="section" id="private-sources">
       <div class="container">
-        <div class="eyebrow">Implement and operate</div>
-        <h2>Configuration is not deployment evidence.</h2>
+        <div class="eyebrow">Candidate gates</div>
+        <h2>Source is not live operation.</h2>
         <table class="data-table">
           <thead>
-            <tr><th>Need</th><th>Source</th><th>Use it for</th></tr>
+            <tr><th>Plane</th><th>Present in candidate source</th><th>Absent live gate</th></tr>
           </thead>
           <tbody>
-            <tr><td><strong>Documentation index</strong></td><td><code>docs/README.md</code></td><td>Private-repository orientation and source routing</td></tr>
-            <tr><td><strong>Configuration</strong></td><td><code>docs/CONFIGURATION.md</code></td><td>Candidate settings, modes, and validation</td></tr>
-            <tr><td><strong>Operations</strong></td><td><code>docs/OPERATIONS.md</code></td><td>Runbooks, evidence, recovery, and promotion gates</td></tr>
-            <tr><td><strong>Serialization</strong></td><td><code>docs/specs/CANONICAL-SERIALIZATION.md</code></td><td>Current versioned signing input—not a complete MIME profile</td></tr>
-            <tr><td><strong>Module manual</strong></td><td><code>docs/MODULE-MANUAL.md</code></td><td>Implementation modules and interfaces</td></tr>
-            <tr><td><strong>Runbooks</strong></td><td><code>docs/runbooks/README.md</code></td><td>Qualification, recovery, lifecycle, and records controls</td></tr>
+            <tr><td><strong>Release and deployment</strong></td><td>Deterministic packaging plus manual release and deploy workflow source</td><td>No release, deployed service, or production qualification</td></tr>
+            <tr><td><strong>Authenticated epochs</strong></td><td>Bounded physical epochs, independent receipt authority, offline history, and recovery source</td><td>Default-off, not activated, and no approved operational cutover</td></tr>
+            <tr><td><strong>GitHub controls</strong></td><td>Terraform and privileged-environment contracts</td><td>No live GitHub controls matching the source contract</td></tr>
+            <tr><td><strong>AWS</strong></td><td>Infrastructure, qualification, evidence, recovery, and rollback workflows</td><td>No approved production AWS deployment</td></tr>
+            <tr><td><strong>Gmail and SES</strong></td><td>Pilot/add-on and operator transport source with SES sender enforcement</td><td>No live Gmail or SES qualification</td></tr>
+            <tr><td><strong>External integrations</strong></td><td>HTTP/OpenAPI, CLI, MCP, reference scripts, and pilot artifacts</td><td>No public SDK, API, or connector program and no live downstream integrations</td></tr>
           </tbody>
         </table>
       </div>
@@ -147,7 +147,7 @@
         <div>
           <div class="eyebrow">Supporting agent extension</div>
           <h2>Keep downstream automation in its lane.</h2>
-          <p class="section-intro">The repository includes optional action binding, policy evaluation, MCP tooling, and an agent harness. These can demonstrate how a caller consumes verified evidence, but the caller remains responsible for enforcement.</p>
+          <p class="section-intro">The repository includes optional action binding, policy evaluation, MCP tooling, and an agent harness. AI agents, enterprise systems, workflow automation, and ERP/CRM remain intended consumers—not live integrations—and the caller remains responsible for enforcement.</p>
         </div>
         <article class="card">
           <h3>Source order</h3>
@@ -160,7 +160,7 @@
 
   <footer class="footer">
     <div class="container footer-grid">
-      <div><a class="brand" href="index.html"><img src="assets/signet7-circle-logo-official-v2.png" alt="Signet7 — Verify the Sender, Seal the Decision"><span>SIGNET<strong>7</strong></span></a><div class="legal-note">Documentation links describe a release candidate and product direction. They do not establish production readiness, customer use, certification, an SLA, or a final commercial offer.</div></div>
+      <div><a class="brand" href="index.html"><img src="assets/signet7-circle-logo-official-v2.png" alt="Signet7 — Verify the Sender, Seal the Decision"><span>SIGNET<strong>7</strong></span></a><div class="legal-note">Documentation describes candidate source and product direction. Signet7 is not released, deployed, or production-qualified. No customer use, certification, SLA, or final commercial offer is established.</div></div>
       <div class="footer-links"><a href="index.html">Overview</a><a href="product.html">Product</a><a href="trust.html">Trust</a><a href="integrations.html">Integrations</a><a href="about.html">Team</a><a href="privacy.html">Privacy status</a></div>
     </div>
   </footer>

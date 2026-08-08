@@ -6,11 +6,13 @@
 
 ## Reasoning
 
-The previous public export used retired AI-inbox positioning and logo artwork. The v2 rollout aligns the public front door with the approved circular identity and evidence-bounded brand promise.
+The public export preserves the approved `Gatekeeper for the AI inbox.` positioning while keeping the source-candidate, operator-integration, and no-live-service boundaries explicit. The v2 rollout also aligns the public front door with the approved circular identity and evidence-bounded brand promise.
 
 ## Final implementation
 
 Public website for [Signet7](https://signet7.io) — **VERIFY THE SENDER • SEAL THE DECISION**.
+
+The product source is a candidate only: Signet7 is not released, deployed, or production-qualified.
 
 This is a static marketing and documentation site served through GitHub Pages. It includes `index.html`, `product.html`, `trust.html`, `integrations.html`, `docs.html`, `about.html`, and `privacy.html`. There are no forms, trackers, or data-collection routes.
 

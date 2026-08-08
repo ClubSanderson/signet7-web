@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Review Signet7 sender provenance, protected-content integrity, VSN key lifecycle, portable evidence, and explicit trust limits.">
+  <meta name="description" content="Trust boundaries for the Signet7 source candidate: protected signed-email components, key binding, evidence, default-off epochs, and absent production assurance.">
   <meta name="theme-color" content="#030609">
   <title>Email Trust Model | Signet7</title>
   <link rel="icon" type="image/png" href="assets/favicon.png">
@@ -30,7 +30,7 @@
     <section class="page-hero">
       <div class="container">
         <div class="eyebrow">Key control · declared coverage · independent checks</div>
-        <div class="badge-row"><span class="badge cyan">Evidence before adjective</span><span class="badge gold">Tamper-evident, not universally immutable</span></div>
+        <div class="badge-row"><span class="badge cyan">Candidate source boundary</span><span class="badge gold">Tamper-evident, not universally immutable</span></div>
         <h1>Trust is a chain of <span class="gradient-text">explicit dependencies.</span></h1>
         <p class="hero-copy">A signature is useful only when the verifier knows what was signed, which key signed it, why that key was trusted, what its status was, and which evidence remains independently controlled.</p>
       </div>
@@ -56,7 +56,7 @@
         <div>
           <div class="eyebrow">Signature meaning</div>
           <h2>Cryptographic validity is not a complete identity claim.</h2>
-          <p class="section-intro">The current foundation can show that a supported signature was created by the private key corresponding to a public key for exact input. Sender trust depends on the binding and status evidence around that key.</p>
+          <p class="section-intro">The current <code>s7-email-1</code> candidate can verify that protected email components match a signed envelope under a corresponding public key. Sender trust still depends on separately governed binding, status, custody, and lifecycle evidence.</p>
         </div>
         <div class="scope-list">
           <div class="scope-row"><b>Proves</b><span>Key control for exact covered bytes under the implemented algorithm and profile.</span></div>
@@ -70,25 +70,25 @@
       <div class="container">
         <div class="eyebrow">Coverage</div>
         <h2>Integrity is only as broad as the signed representation.</h2>
-        <p class="section-intro">The current sender/message/body input is a foundation. A complete email profile needs deterministic MIME and attachment rules that survive legitimate transformations without concealing meaningful alteration.</p>
+        <p class="section-intro">The candidate source implements deterministic checks for declared protected headers, MIME structure, plain/HTML parts, and attachments under <code>s7-email-1</code>. That source capability does not establish universal email coverage, accepted provider interoperability, or a deployed verification service.</p>
         <div class="truth-grid">
           <div class="truth yes">
-            <h3>Required email-MVP properties</h3>
+            <h3>Source-built profile properties</h3>
             <ul>
               <li>Versioned canonicalization and declared component coverage.</li>
-              <li>Attachment and nested-part manifest rules.</li>
-              <li>Clear unsupported/indeterminate outcomes.</li>
-              <li>Replay, expiry, rotation, and revocation behavior.</li>
-              <li>Cross-implementation test vectors and negative fixtures.</li>
+              <li>Protected-header, MIME-tree, part, attachment-byte, and filename checks.</li>
+              <li>Component-level changed, missing, added, reordered, renamed, and invalid outcomes.</li>
+              <li>Resource limits, time/expiry evaluation, and optional replay observation.</li>
+              <li>Primary and independently implemented in-repository verification paths.</li>
             </ul>
           </div>
           <div class="truth no">
-            <h3>Unsafe shortcuts</h3>
+            <h3>Still external or unproved</h3>
             <ul>
-              <li>Calling a body string “the whole email.”</li>
-              <li>Implying unspecified attachments are protected.</li>
-              <li>Silently ignoring provider transformations.</li>
-              <li>Returning “verified” when coverage or status is unknown.</li>
+              <li>Real-world human identity, authority, intent, or truthful content.</li>
+              <li>No live Gmail/SES transformation and interoperability qualification.</li>
+              <li>Every possible format, gateway rewrite, client rendering, or provider behavior.</li>
+              <li>Independent acceptance, production readiness, certification, or legal admissibility.</li>
             </ul>
           </div>
         </div>
@@ -100,7 +100,7 @@
         <div>
           <div class="eyebrow">VSN trust lifecycle</div>
           <h2>Verification needs current status, not just a public key.</h2>
-          <p class="section-intro">The Verifiable Sender Network is Signet7's managed trust infrastructure for the organizational lifecycle around sender trust. The current repository does not yet prove the complete managed service.</p>
+          <p class="section-intro">The Verifiable Sender Network is Signet7's planned managed trust infrastructure for the organizational lifecycle around sender trust. Current source supplies tenant bindings, signed trust events, and optional DNS exact-key matching; it does not prove or operate the complete managed service.</p>
         </div>
         <div class="scope-list">
           <div class="scope-row"><b>Enroll</b><span>Verify who may establish the organization/sender/key relationship.</span></div>
@@ -122,6 +122,7 @@
             <tr><td><strong>Hash chain</strong></td><td>Covered in-chain changes are detectable</td><td>A separately rolled-back complete copy may require an independent head</td></tr>
             <tr><td><strong>Expected head</strong></td><td>Checked evidence matches an independently obtained checkpoint</td><td>Only as current and trustworthy as its custody/source</td></tr>
             <tr><td><strong>External anchor</strong></td><td>Can strengthen rollback/deletion evidence</td><td>Requires correct deployment, retention, monitoring, and independent access</td></tr>
+            <tr><td><strong>Physical epochs</strong></td><td>Source-built bounded partitions preserve global sequence/hash continuity and independent receipt roles</td><td>Disabled by default, not activated, and not evidence of a qualified AWS operation</td></tr>
             <tr><td><strong>Evidence bundle</strong></td><td>Portable bytes and verification metadata can be checked</td><td>Does not prove legal admissibility, completeness, or every asserted fact</td></tr>
           </tbody>
         </table>
@@ -135,7 +136,7 @@
         <div class="grid-3">
           <article class="card"><h3>SPF / DKIM / DMARC</h3><p>Transport/domain authorization and policy signals that remain important. Signet7 does not claim to replace or currently integrate every one.</p></article>
           <article class="card"><h3>Gateways / reputation</h3><p>Threat, abuse, behavioral, content, and policy analysis that can complement cryptographic evidence.</p></article>
-          <article class="card"><h3>Signet7</h3><p>Intended sender/key trust, declared protected-content integrity, portable evidence, and managed lifecycle through VSN.</p></article>
+          <article class="card"><h3>Signet7</h3><p>Candidate sender/key checks, declared protected-component integrity, and portable evidence; managed lifecycle through VSN remains product direction.</p></article>
         </div>
       </div>
     </section>
@@ -165,7 +166,7 @@
           <div class="truth no">
             <h3>No assurance shortcut</h3>
             <ul>
-              <li>No approved production deployment, SLA, or customer result.</li>
+              <li>No released or deployed service, approved production deployment, SLA, or customer result.</li>
               <li>No independent penetration test or cryptographic review.</li>
               <li>No SOC 2, ISO, EU AI Act, SOX, or legal-admissibility conclusion.</li>
             </ul>
@@ -181,7 +182,7 @@
 
   <footer class="footer">
     <div class="container footer-grid">
-      <div><a class="brand" href="index.html"><img src="assets/signet7-circle-logo-official-v2.png" alt="Signet7 — Verify the Sender, Seal the Decision"><span>SIGNET<strong>7</strong></span></a><div class="legal-note">Technical verification is not a legal conclusion, certification, customer acceptance, or proof of deployment.</div></div>
+      <div><a class="brand" href="index.html"><img src="assets/signet7-circle-logo-official-v2.png" alt="Signet7 — Verify the Sender, Seal the Decision"><span>SIGNET<strong>7</strong></span></a><div class="legal-note">Technical verification is not a legal conclusion, certification, customer acceptance, or proof of deployment. Signet7 is not released, deployed, or production-qualified.</div></div>
       <div class="footer-links"><a href="index.html">Overview</a><a href="product.html">Product</a><a href="integrations.html">Integrations</a><a href="docs.html">Docs</a><a href="privacy.html">Privacy status</a></div>
     </div>
   </footer>

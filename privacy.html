@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Current privacy status and product-data boundaries for the Signet7 email trust project.">
+  <meta name="description" content="Current privacy and data-boundary status for the Signet7 source candidate; no production service, final privacy policy, or customer-data intake is represented.">
   <meta name="theme-color" content="#030609">
   <title>Privacy Status | Signet7</title>
   <link rel="icon" type="image/png" href="assets/favicon.png">
@@ -90,16 +90,16 @@
       <div class="container split">
         <div>
           <div class="eyebrow">Current candidate record</div>
-          <h2>Protected identifiers, not a promise of content-free operation.</h2>
-          <p class="section-intro">The current decision path is designed to persist protected identifiers, fingerprints, action/provenance/policy fields, metadata, and evidence-chain information rather than storing the submitted body, signature, or key verbatim in that decision record.</p>
+          <h2>Local and HTTP paths have different data boundaries.</h2>
+          <p class="section-intro">Candidate <code>s7-email-1</code> signing and verification parses declared headers, MIME structure, bodies, and attachments and can produce component-level results and derived evidence. CLI verification can remain local; an operator-run HTTP flow necessarily receives the submitted message bytes.</p>
         </div>
         <article class="card">
           <h3>Important boundary</h3>
-          <p>The service necessarily receives inputs to evaluate them, and other routes, logs, deployment components, exports, test fixtures, integrations, or future email workflows may handle different data. The exact deployed flow must be reviewed before making a privacy claim.</p>
+          <p>Evidence records, exports, logs, deployment components, test fixtures, provider pilots, and future workflows may handle different fields or bytes. The exact operator configuration, retention policy, and data route must be reviewed before making a privacy claim.</p>
         </article>
       </div>
       <div class="container">
-        <div class="notice"><strong>Email-product status:</strong> complete MIME and attachment processing is not implemented. The final architecture must specify whether protected content remains local, is transmitted to a verifier, is retained, or is represented only by derived values at each boundary.</div>
+        <div class="notice"><strong>Email-product status:</strong> the source candidate implements declared MIME/attachment component checks, but no deployed flow, final data architecture, provider qualification, or production retention policy is established. Operators must decide and disclose whether protected content remains local, is transmitted, is retained, or is represented only by derived values at each boundary.</div>
       </div>
     </section>
 
@@ -107,7 +107,7 @@
       <div class="container">
         <div class="eyebrow">Verifiable Sender Network</div>
         <h2>Managed trust creates a lifecycle record.</h2>
-        <p class="section-intro">A complete VSN service is expected to process organization, sender, administrator, key, trust-status, rotation, revocation, recovery, verification, and abuse-prevention data. The managed service is not complete today, so its final data flows and commitments remain subject to design, security, privacy, legal, and operational approval.</p>
+        <p class="section-intro">The planned VSN service is expected to process organization, sender, administrator, key, trust-status, rotation, revocation, recovery, verification, and abuse-prevention data. It is not operating today, so final data flows and commitments remain subject to design, security, privacy, legal, and operational approval.</p>
         <div class="grid-3">
           <article class="card"><h3>Enroll</h3><p>Define what evidence is required, who may act for an organization, and how errors or disputes are corrected.</p></article>
           <article class="card"><h3>Maintain</h3><p>Record status changes, rotation, revocation, recovery, administrative actions, and applicable audit history.</p></article>
@@ -150,7 +150,7 @@
 
   <footer class="footer">
     <div class="container footer-grid">
-      <div><a class="brand" href="index.html"><img src="assets/signet7-circle-logo-official-v2.png" alt="Signet7 — Verify the Sender, Seal the Decision"><span>SIGNET<strong>7</strong></span></a><div class="legal-note">Draft transparency page only. Legal and privacy review is required before any public privacy policy, production data collection, retention promise, or customer processing commitment.</div></div>
+      <div><a class="brand" href="index.html"><img src="assets/signet7-circle-logo-official-v2.png" alt="Signet7 — Verify the Sender, Seal the Decision"><span>SIGNET<strong>7</strong></span></a><div class="legal-note">Draft transparency page only. Signet7 is not released, deployed, or production-qualified. Legal and privacy review is required before any final privacy policy, production data collection, retention promise, or customer processing commitment.</div></div>
       <div class="footer-links"><a href="index.html">Overview</a><a href="product.html">Product</a><a href="trust.html">Trust</a><a href="integrations.html">Integrations</a><a href="about.html">Team</a><a href="docs.html">Docs</a></div>
     </div>
   </footer>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Understand Signet7's cryptographic email evidence and the Verifiable Sender Network managed trust infrastructure.">
+  <meta name="description" content="Current Signet7 source candidate: s7-email-1 signing and verification, HTTP integration, evidence, recovery, packaging, and default-off epochs—not a live service.">
   <meta name="theme-color" content="#030609">
   <title>Email Trust Product | Signet7</title>
   <link rel="icon" type="image/png" href="assets/favicon.png">
@@ -29,13 +29,13 @@
   <main id="main-content">
     <section class="page-hero">
       <div class="container">
-        <div class="eyebrow">Email provenance · integrity · evidence · managed trust</div>
+        <div class="eyebrow">Candidate source · operator integration · product direction</div>
         <div class="badge-row">
-          <span class="badge cyan">Email-first product model</span>
-          <span class="badge gold">Current foundation + roadmap</span>
+          <span class="badge cyan">Source-built email verification</span>
+          <span class="badge gold">No live service</span>
         </div>
-        <h1>One platform. <span class="gradient-text">One managed trust framework.</span></h1>
-        <p class="hero-copy">Signet7 combines cryptographic evidence for protected email with the Verifiable Sender Network's managed enrollment, discovery, status, lifecycle, scalable verification, and enterprise administration.</p>
+        <h1>Proof in the source. <span class="gradient-text">Deployment still gated.</span></h1>
+        <p class="hero-copy">Signet7's current candidate source signs and verifies protected email, exposes verification and evidence interfaces, and includes recovery and packaging. VSN remains planned managed infrastructure; mailbox receive paths and production operations remain operator or integrator work.</p>
       </div>
     </section>
 
@@ -43,14 +43,14 @@
       <div class="container">
         <div class="eyebrow">Core email capability</div>
         <h2>Declare coverage. Verify the evidence.</h2>
-        <p class="section-intro">The intended product flow begins with an important email—not an agent action.</p>
+        <p class="section-intro"><strong><code>s7-email-1</code> signed-email signing and verification</strong> covers declared headers, MIME structure, plain and HTML bodies, and attachments in the candidate source. Owner acceptance and independent review remain open, and no live provider qualification has been retained.</p>
         <div class="grid-3">
           <article class="card"><div class="icon">01</div><h3>Prepare</h3><p>Normalize a versioned set of message components and declare exactly what the signature covers.</p></article>
           <article class="card"><div class="icon">02</div><h3>Sign</h3><p>Bind the covered representation to an authorized key and relevant sender or organization context.</p></article>
           <article class="card"><div class="icon">03</div><h3>Verify</h3><p>Resolve key/status trust, detect changes to covered components, and produce an explicit result.</p></article>
           <article class="card"><div class="icon">04</div><h3>Preserve</h3><p>Create tamper-evident evidence with signer, coverage, result, chain, and custody metadata.</p></article>
           <article class="card"><div class="icon">05</div><h3>Export</h3><p>Allow later validation with separately controlled signer, tenant, and expected-head inputs.</p></article>
-          <article class="card"><div class="icon">06</div><h3>Integrate</h3><p>Connect providers, gateways, recipient systems, archives, evidence tools, AI-agent policy gates, workflow automation, compliance pipelines, ERP/CRM systems, and enterprise records consumers.</p></article>
+          <article class="card"><div class="icon">06</div><h3>Integrate</h3><p>Operators and integrators can call the current HTTP verification contract from transactional and webhook flows, then supply delivery, receive, and enforcement behavior.</p></article>
         </div>
       </div>
     </section>
@@ -59,14 +59,14 @@
       <div class="container split">
         <div>
           <div class="eyebrow">Verifiable Sender Network</div>
-          <h2>The managed trust infrastructure.</h2>
-          <p class="section-intro">VSN establishes and maintains the organizational relationships, key status, lifecycle governance, scalable verification, and administration that make Signet7's cryptographic evidence model usable at enterprise scale.</p>
+          <h2>The planned managed trust infrastructure.</h2>
+          <p class="section-intro">VSN is planned to establish and maintain the organizational relationships, key status, lifecycle governance, scalable verification, and administration needed at enterprise scale. Current source provides tenant sender/key bindings, signed trust events, and optional domain TXT key matching—not the operated network.</p>
         </div>
         <div class="scope-list">
-          <div class="scope-row"><b>Enrollment</b><span>Organization, sender, administrator, and key relationships.</span></div>
-          <div class="scope-row"><b>Discovery</b><span>Managed resolution of key and trust status.</span></div>
-          <div class="scope-row"><b>Lifecycle</b><span>Rotation, revocation, recovery, expiry, and audit history.</span></div>
-          <div class="scope-row"><b>Enterprise</b><span>Policy, administration, scale, monitoring, support, and abuse controls.</span></div>
+          <div class="scope-row"><b>Enrollment</b><span>Planned organization, sender, administrator, and key relationships.</span></div>
+          <div class="scope-row"><b>Discovery</b><span>Current local/DNS artifacts; planned managed resolution and status.</span></div>
+          <div class="scope-row"><b>Lifecycle</b><span>Planned managed rotation, revocation, recovery, expiry, and history.</span></div>
+          <div class="scope-row"><b>Enterprise</b><span>Planned policy, administration, scale, monitoring, support, and abuse controls.</span></div>
         </div>
       </div>
       <div class="container">
@@ -77,44 +77,46 @@
     <section class="section">
       <div class="container">
         <div class="eyebrow">Platform model</div>
-        <h2>Cryptographic evidence and managed trust, operating together.</h2>
+        <h2>Candidate evidence now. Managed trust as product direction.</h2>
         <div class="grid-3">
           <article class="card">
             <h3>Protected evidence</h3>
-            <p>Defined message coverage, cryptographic signing, explicit verification results, and portable records.</p>
-            <p><small>Complete MIME and attachment coverage remains email-MVP work.</small></p>
+            <p>Declared header and MIME-tree coverage, plain/HTML and attachment component checks, explicit results, and portable records.</p>
+            <p><small>Source-built; acceptance, independent review, and live-provider evidence remain open.</small></p>
           </article>
           <article class="card hot">
             <h3>Managed VSN trust</h3>
-            <p>Organizational enrollment, discovery, status, rotation, revocation, lifecycle governance, and scalable verification.</p>
+            <p>Planned organizational enrollment, discovery, status, rotation, revocation, lifecycle governance, and scalable verification.</p>
             <p><small>The complete managed service remains planned.</small></p>
           </article>
           <article class="card">
             <h3>Enterprise operations</h3>
-            <p>Administration, integrations, evidence operations, support, audit, and organization-specific controls.</p>
+            <p>Current operator responsibilities and future administration, integration, evidence, support, audit, and organization controls.</p>
             <p><small>No price, SLA, or final service commitment is approved.</small></p>
           </article>
         </div>
-        <div class="notice"><strong>Platform principle:</strong> verification remains portable and independently checkable, while VSN supplies the managed organizational trust needed at scale. Technical interoperability is not positioned as a complete substitute for VSN.</div>
+        <div class="notice"><strong>Platform principle:</strong> verification remains portable and independently checkable, while the planned VSN is intended to supply managed organizational trust at scale. Technical interoperability is not positioned as a complete substitute for that future service.</div>
       </div>
     </section>
 
     <section class="section section-line">
       <div class="container">
         <div class="eyebrow">Delivery status</div>
-        <h2>Foundation, email MVP, managed service, extension.</h2>
+        <h2>What the candidate source contains—and what it does not prove.</h2>
         <table class="data-table">
           <thead>
             <tr><th>Layer</th><th>Current state</th><th>What remains</th></tr>
           </thead>
           <tbody>
-            <tr><td><strong>Cryptographic foundation</strong></td><td>Sender/message/body signatures, optional action binding, key trust paths</td><td>Exact-candidate review and productized email contracts</td></tr>
-            <tr><td><strong>Evidence foundation</strong></td><td>Signed hash chain, tenant scope, export, detached verification, optional anchoring</td><td>Deployment, custody, complete-history, and operational evidence</td></tr>
-            <tr><td><strong>Email MVP</strong></td><td>Partial input/signature foundation</td><td>MIME canonicalization, attachment/component coverage, recipient result, replay/status behavior, provider workflows</td></tr>
-            <tr><td><strong>Managed VSN</strong></td><td>Enrollment/trust/DNS foundations</td><td>Operated enrollment, lifecycle, revocation, administration, scale, support, abuse controls, SLA evidence</td></tr>
-            <tr><td><strong>Agent extension</strong></td><td>Decision endpoint, policy path, MCP and demo tooling</td><td>Keep secondary; version any future email-evidence consumer contract</td></tr>
+            <tr><td><strong>Signed email</strong></td><td><code>s7-email-1</code> signer/verifier, protected headers and MIME components, recipient HTTP/UI and CLI tooling</td><td>Owner acceptance, independent review, and retained live-provider qualification</td></tr>
+            <tr><td><strong>HTTP and operator paths</strong></td><td>Sign/verify contracts plus transactional and webhook-callable verification</td><td>An operator/integrator still supplies mailbox ingress, credentials, routing, and enforcement</td></tr>
+            <tr><td><strong>Evidence and recovery</strong></td><td>Signed hash chain, tenant scope, export, detached verification, anchoring paths, and logical/physical recovery source</td><td>Production custody, recovery drills, independently retained inputs, and approved operations</td></tr>
+            <tr><td><strong>Authenticated epochs</strong></td><td>Bounded physical ledger epochs with global continuity and independent receipt roles</td><td>Human review/merge, live controls, production qualification, and explicit activation</td></tr>
+            <tr><td><strong>Packaging and operations</strong></td><td>Python/OCI packaging, nine Windows commands, and manual release/deploy workflow source</td><td>No released artifacts, deployed service, live controls, or production approval</td></tr>
+            <tr><td><strong>Managed VSN and consumers</strong></td><td>Local/DNS trust artifacts plus agent/MCP evaluation surfaces</td><td>No operated VSN, public integration program, or live downstream integration</td></tr>
           </tbody>
         </table>
+        <div class="notice gold"><strong>Candidate inventory:</strong> the candidate source includes a signed, hash-chained evidence ledger, recovery tooling, nine-command Windows packaging, manual release and deployment workflows, and authenticated physical epochs. Epochs are disabled by default and not activated.</div>
       </div>
     </section>
 
@@ -124,21 +126,21 @@
         <h2>No protection claim without an exact coverage declaration.</h2>
         <div class="truth-grid">
           <div class="truth yes">
-            <h3>Current exact input</h3>
+            <h3>Current source-built coverage</h3>
             <ul>
-              <li>Normalized sender.</li>
-              <li>Message identifier.</li>
-              <li>Message body string.</li>
-              <li>Optional exact action in the extension profile.</li>
+              <li>Protected sender/routing headers including From, Message-ID, Date, Subject, and present recipient fields.</li>
+              <li>Declared MIME tree, leaf-part order, media type, disposition, and component metadata.</li>
+              <li>Plain-text/HTML content and attachment bytes/filenames under <code>s7-email-1</code>.</li>
+              <li>Component-level results, resource limits, time/replay signals, and optional exact action in the separate extension profile.</li>
             </ul>
           </div>
           <div class="truth no">
-            <h3>Not yet complete</h3>
+            <h3>Not established by source alone</h3>
             <ul>
-              <li>Full MIME header/body canonicalization.</li>
-              <li>Comprehensive attachments and nested MIME parts.</li>
-              <li>Provider-specific transformations and rendering.</li>
-              <li>Recipient inbox indicator and explanation UX.</li>
+              <li>Universal support for every email structure, transformation, client, gateway, or provider.</li>
+              <li>No live Gmail/SES transformation and interoperability qualification.</li>
+              <li>A deployed receive pipeline, mailbox indicator, or recipient-side service.</li>
+              <li>Independent security acceptance, production readiness, certification, or legal conclusion.</li>
             </ul>
           </div>
         </div>
@@ -162,7 +164,7 @@
 
   <footer class="footer">
     <div class="container footer-grid">
-      <div><a class="brand" href="index.html"><img src="assets/signet7-circle-logo-official-v2.png" alt="Signet7 — Verify the Sender, Seal the Decision"><span>SIGNET<strong>7</strong></span></a><div class="legal-note">Product direction and current implementation are separate. No final package, price, entitlement, deployment, or SLA is offered here.</div></div>
+      <div><a class="brand" href="index.html"><img src="assets/signet7-circle-logo-official-v2.png" alt="Signet7 — Verify the Sender, Seal the Decision"><span>SIGNET<strong>7</strong></span></a><div class="legal-note">Product direction and candidate source are separate. Signet7 is not released, deployed, or production-qualified. No final package, price, entitlement, or SLA is offered here.</div></div>
       <div class="footer-links"><a href="index.html">Overview</a><a href="trust.html">Trust</a><a href="integrations.html">Integrations</a><a href="docs.html">Docs</a><a href="privacy.html">Privacy status</a></div>
     </div>
   </footer>

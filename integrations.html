@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Integrate Signet7 email signing, verification, evidence, and future managed VSN services without overstating current provider support.">
+  <meta name="description" content="Candidate Signet7 integration paths: signed-email HTTP verification, Gmail and SES pilot/operator tooling, and operator-owned transactional or webhook flows—not live connectors.">
   <meta name="theme-color" content="#030609">
   <title>Email Integrations | Signet7</title>
   <link rel="icon" type="image/png" href="assets/favicon.png">
@@ -32,10 +32,10 @@
         <div class="eyebrow">Sender systems · gateways · recipient systems · evidence tools</div>
         <div class="badge-row">
           <span class="badge cyan">Email-first integration model</span>
-          <span class="badge gold">Provider connectors are roadmap work</span>
+          <span class="badge gold">Gmail/SES source pilots</span>
         </div>
         <h1>Put verification into the <span class="gradient-text">email path.</span></h1>
-        <p class="hero-copy">Signet7 is intended to connect the systems that prepare important email, the controls that inspect it, the recipients that need a clear result, and the archives or investigators that need portable evidence later.</p>
+        <p class="hero-copy">The source includes signed-email HTTP contracts, local CLI tooling, Gmail pilot tooling, and SES operator tooling. Operators and integrators connect those pieces to transactional, webhook, mailbox, archive, or automation flows; this is not a deployed receive service or public connector program.</p>
       </div>
     </section>
 
@@ -47,22 +47,22 @@
           <article class="card">
             <div class="icon">01</div>
             <h3>Sender-side systems</h3>
-            <p>Applications, provider send paths, mail-transfer systems, and secure-email gateways can prepare covered components and request a signature.</p>
+            <p>Applications, provider send paths, mail-transfer systems, and secure-email gateways are target integration points for preparing covered components and requesting a signature.</p>
           </article>
           <article class="card">
             <div class="icon">02</div>
             <h3>Verification controls</h3>
-            <p>Gateways, security products, provider workflows, and recipient clients can resolve trust and explain whether covered evidence validates.</p>
+            <p>Gateways, security products, provider workflows, and recipient clients are target integration points for trust resolution and component-level results.</p>
           </article>
           <article class="card">
             <div class="icon">03</div>
             <h3>Evidence consumers</h3>
-            <p>Archives, e-discovery, incident response, audit, and case-management systems can retain or inspect exported evidence with controlled trust inputs.</p>
+            <p>Archives, e-discovery, incident response, audit, and case-management systems are target consumers for exported evidence with controlled trust inputs.</p>
           </article>
           <article class="card">
             <div class="icon">04</div>
             <h3>Identity and key systems</h3>
-            <p>Enterprise identity, key management, DNS, and future VSN services can support enrollment, discovery, rotation, revocation, and administrative status.</p>
+            <p>Enterprise identity, key management, DNS, and the planned VSN are target systems for enrollment, discovery, rotation, revocation, and administrative status.</p>
           </article>
           <article class="card">
             <div class="icon">05</div>
@@ -72,45 +72,47 @@
           <article class="card">
             <div class="icon">06</div>
             <h3>Automated consumers</h3>
-            <p>AI agents, workflow automation, compliance pipelines, ERP/CRM systems, and enterprise records consumers may use a verified-email result as trusted input before acting. That integration path is secondary to the email product and expands as the email and VSN foundation matures.</p>
+            <p>AI agents, workflow automation, compliance pipelines, ERP/CRM systems, and enterprise records consumers may use verified-email evidence before acting. They remain secondary to the email product.</p>
           </article>
         </div>
+        <div class="notice gold"><strong>Consumer boundary:</strong> AI agents, enterprise systems, workflow automation, ERP/CRM, and records systems are intended consumers and integration targets—not live integrations.</div>
       </div>
     </section>
 
     <section class="section section-line">
       <div class="container">
         <div class="eyebrow">What can be evaluated now</div>
-        <h2>Existing interfaces are foundations—not finished email connectors.</h2>
+        <h2>Existing interfaces require an operator-owned path.</h2>
         <table class="data-table">
           <thead>
             <tr><th>Surface</th><th>Current candidate</th><th>Email-product boundary</th></tr>
           </thead>
           <tbody>
-            <tr><td><strong>HTTP API</strong></td><td>Tenant-scoped decision, trust, ledger, export, and operational routes</td><td>Current request contracts are not a complete MIME or provider integration contract</td></tr>
-            <tr><td><strong>CLI and sender helper</strong></td><td>Local signing, evaluation, verification, export, and a limited email-sender flow</td><td>Useful for controlled evaluation; not a production mailbox plug-in</td></tr>
-            <tr><td><strong>Detached verifier</strong></td><td>Evidence verification with independently supplied trust and completeness inputs</td><td>Does not prove the source history was complete or the real-world sender identity by itself</td></tr>
-            <tr><td><strong>DNS discovery</strong></td><td>Optional Signet7 key-discovery path</td><td>Not the complete managed VSN service and not a substitute for enrollment governance</td></tr>
-            <tr><td><strong>MCP / agent tooling</strong></td><td>Supporting action-bound decision and demonstration surfaces</td><td>The caller must enforce the result; this is not the product center</td></tr>
+            <tr><td><strong>Signed-email HTTP</strong></td><td>Compose/sign and component-level <code>s7-email-1</code> verification contracts</td><td>Callable from transactional and webhook flows; not a hosted webhook receiver or mailbox ingress service</td></tr>
+            <tr><td><strong>CLI email tooling</strong></td><td>Local key generation, sign, verify, and explicit opt-in transport commands</td><td>Local success does not prove provider delivery, enrollment, or production readiness</td></tr>
+            <tr><td><strong>Gmail pilot</strong></td><td>Workspace add-on source plus SMTP/IMAP pilot adapters</td><td>Not a deployed add-on, Marketplace offer, or live-qualified Gmail product</td></tr>
+            <tr><td><strong>SES operator path</strong></td><td>Raw send, configured-sender enforcement, and optional S3 receipt fetch source</td><td>Requires approved AWS identity, SES setup, credentials, and retained live qualification</td></tr>
+            <tr><td><strong>Evidence and recovery</strong></td><td>Signed ledger, export, detached checks, anchoring paths, and recovery tooling</td><td>Production custody, deployment, recovery drills, and operational approval remain absent</td></tr>
+            <tr><td><strong>MCP / agent tooling</strong></td><td>Supporting action-bound decision and demonstration surfaces</td><td>The caller must enforce the result; this is not the product center or a live agent integration</td></tr>
           </tbody>
         </table>
-        <div class="notice"><strong>Current coverage:</strong> the candidate binds a normalized sender, message identifier, and body string, with an optional exact action in the extension profile. Complete MIME canonicalization and comprehensive attachment coverage are not yet implemented.</div>
+        <div class="notice"><strong>Current source boundary:</strong> Gmail pilot tooling and SES operator tooling exist in source; there is no live Gmail or SES qualification. Signet7 is not a deployed webhook receiver. There is no deployed inbound mailbox gateway, no agent inbox service, and no universal receive pipeline; operators and integrators provide ingress, credentials, routing, policy, and enforcement.</div>
       </div>
     </section>
 
     <section class="section">
       <div class="container split">
         <div>
-          <div class="eyebrow">Email MVP integration track</div>
-          <h2>The next contract must survive real email.</h2>
-          <p class="section-intro">Provider and gateway work should begin only after a versioned coverage profile defines how message headers, bodies, MIME parts, attachments, encodings, and allowed transformations are represented and verified.</p>
+          <div class="eyebrow">Operator integration track</div>
+          <h2>Source capability must survive the real route.</h2>
+          <p class="section-intro">The candidate profile represents declared headers, MIME structure, bodies, and attachments. Before any compatibility claim, an operator or integrator must wire a named route, capture real provider transformations, exercise negative cases, and retain qualification evidence.</p>
         </div>
         <div class="scope-list">
-          <div class="scope-row"><b>Canonicalize</b><span>Define exact, testable coverage profiles for real MIME messages.</span></div>
-          <div class="scope-row"><b>Transport</b><span>Specify how signature, coverage, key, and status references travel.</span></div>
-          <div class="scope-row"><b>Transform</b><span>Document which provider or gateway changes preserve or invalidate coverage.</span></div>
-          <div class="scope-row"><b>Explain</b><span>Return recipient-facing outcomes for valid, invalid, unknown, revoked, expired, and unsupported cases.</span></div>
-          <div class="scope-row"><b>Preserve</b><span>Define evidence custody, export, retention, and deletion responsibilities.</span></div>
+          <div class="scope-row"><b>Invoke</b><span>Call sign/verify from the operator's transactional or webhook workflow.</span></div>
+          <div class="scope-row"><b>Transport</b><span>Configure an approved sender path and preserve the signed message bytes.</span></div>
+          <div class="scope-row"><b>Receive</b><span>Supply mailbox, gateway, object-store, or other inbound retrieval owned by the integrator.</span></div>
+          <div class="scope-row"><b>Qualify</b><span>Document which real provider changes preserve, tolerate, or invalidate coverage.</span></div>
+          <div class="scope-row"><b>Enforce</b><span>Present results and make policy/action behavior explicit outside the verifier.</span></div>
         </div>
       </div>
     </section>
@@ -134,7 +136,7 @@
             <h3>Not established by this repository</h3>
             <ul>
               <li>A signed partnership with any named email provider or vendor.</li>
-              <li>Production compatibility with Gmail, Outlook, or another mailbox.</li>
+              <li>No live qualification or production compatibility with Gmail, SES, Outlook, or another mailbox/provider.</li>
               <li>Marketplace availability, provider endorsement, or certification.</li>
               <li>A production SLA, supported deployment, or customer rollout.</li>
               <li>Universal interoperability with SPF, DKIM, DMARC, S/MIME, or PGP.</li>
@@ -162,7 +164,7 @@
 
   <footer class="footer">
     <div class="container footer-grid">
-      <div><a class="brand" href="index.html"><img src="assets/signet7-circle-logo-official-v2.png" alt="Signet7 — Verify the Sender, Seal the Decision"><span>SIGNET<strong>7</strong></span></a><div class="legal-note">No provider partnership, connector compatibility, production deployment, customer, certification, SLA, or final-pricing claim is made here.</div></div>
+      <div><a class="brand" href="index.html"><img src="assets/signet7-circle-logo-official-v2.png" alt="Signet7 — Verify the Sender, Seal the Decision"><span>SIGNET<strong>7</strong></span></a><div class="legal-note">Gmail and SES are pilot/operator tooling, not qualified connectors. Signet7 is not released, deployed, or production-qualified. No provider partnership, customer, certification, SLA, or final-pricing claim.</div></div>
       <div class="footer-links"><a href="index.html">Overview</a><a href="product.html">Product</a><a href="trust.html">Trust</a><a href="about.html">Team</a><a href="privacy.html">Privacy status</a><a href="docs.html">Docs</a></div>
     </div>
   </footer>
